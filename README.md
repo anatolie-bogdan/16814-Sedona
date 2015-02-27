@@ -1,7 +1,7 @@
 # Проект «Sedona»
 
 * Студент: [Анатолий Богдан](https://htmlacademy.ru/profile/id16814).
-* Наставник: `Unknown`.
+* Наставник: `https://github.com/redly`.
 
 --
 
