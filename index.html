@@ -9,120 +9,149 @@
 
 <body>
 	<header>
-		<section class="head-menu">
-			<div class="sedona-logo">
-				<a href=""><img src="" alt="sedona logo">Sedona Logo</a>
-			</div>
-			<div class="main-menu">
-				<a href=""><img src="" alt="main menu"></a>
-				<nav class="menu">
-					<ul>
-						<li><a href="">карта штата</a></li>
-						<li><a href="">информация</a></li>
-						<li><a href="">фото и видео</a></li>
-						<li><a href="">гостиницы</a></li>
-					</ul>
-					<a class="close-menu" href=""></a>
-				</nav>
-			</div>
-		</section>
-		<section class="sedona-welcome">
-			<div class="greetings">
-				<h1><span class="line1">welocome </span><span class="line2">to the gorgeous </span><span class="line3">sedona</span></h1>
-				<blockquote>because the grand canyon sucks!</blockquote>
-				<p class="sedona-description">Седона - небольшой городок в аризоне, заслуживающий большего!</p>
-				<p>Рассмотрим 5 причин, почему Седона круче чем Гранд Каньон!</p>
+		<!-- Этот блок с лого и меню я вижу статичным всегда вверху страницы, поэтому в отдельный section поместил -->
+		<section class="header-top">
+			<div class="header-top__wrap">
+				<div class="header-top__logo">
+					<a class="header-top__logo-link" href=""><img src="" alt="sedona logo">Sedona Logo</a>
+				</div>
+				<div class="main-menu">
+					<a class="main-menu__open" href=""><img src="" alt="main menu"></a>
+					<nav class="main-menu">
+						<ul>
+							<li><a href="">карта штата</a></li>
+							<li><a href="">информация</a></li>
+							<li><a href="">фото и видео</a></li>
+							<li><a href="">гостиницы</a></li>
+						</ul>
+						<a class="main-menu__close" href=""></a>
+					</nav>
+				</div>
+			</section>
+
+			<section class="header-welcome">
+				<div class="header-welcome__wrap">
+					<div class="header-welcome__greetings">
+						<h1 class="header-welcome__title"><span class="line1">welocome </span><span class="line2">to the gorgeous </span><span class="line3">sedona</span></h1>
+						<blockquote class="header-welcome__cite">because the grand canyon sucks!</blockquote>
+						<p class="header-welcome__sedona-description">Седона - небольшой городок в аризоне, заслуживающий большего!</p>
+						<p class="cotent-text content-text--header">Рассмотрим 5 причин, почему Седона круче чем Гранд Каньон!</p>
+					</div>
+				</div>
 			</div>
 		</section>
 	</header>
 
 	<main>
-		<section class="sedona-advantageы advantage1">
-			<h2 class="content-title blue">настоящий городок</h2>
-			<p>седона не атракцион для туристов, там течет своя жизнь</p>
-			<img src="" alt="sedona town">
-			<div class="sedona-benefits">
-				<div class="benefits benefit1">
-					<h3>жилье</h3>
-					<p>рекомендум пожить в настоящем мотеле, все как в кино!</p>
-				</div>
-				<div class="benefits benefit2">
-					<h3>сувениры</h3>
-					<p>не только китайского, но и местного производства!</p>
-				</div>
-				<div class="benefits benefit3">
-					<h3>еда</h3>
-					<p>всегда заказывайте фирменный бургер, вы не разочаруйтесь!</p>
+		<section class="sedona-town">
+			<div class="sedona-town__wrap">
+				<h2 class="content-title-h2 content-title-h2--white">настоящий городок</h2>
+				<p class="cotent-text content-text--white">седона не атракцион для туристов, там течет своя жизнь</p>
+			</div>
+				<figure class="sedona-city__img">
+					<img src="" alt="sedona town">
+				</figure>
+			<div class="sedona-town__wrap">
+				<div class="sedona-town__benefits">
+					<div class="benefit1">
+						<h3 class="sedona-town__title">жилье</h3>
+						<p class="cotent-text">рекомендум пожить в настоящем мотеле, все как в кино!</p>
+					</div>
+					<div class="benefit2">
+						<h3 class="sedona-town__title">сувениры</h3>
+						<p class="cotent-text">не только китайского, но и местного производства!</p>
+					</div>
+					<div class="benefit3">
+						<h3 class="sedona-town__title">еда</h3>
+						<p class="cotent-text">всегда заказывайте фирменный бургер, вы не разочаруйтесь!</p>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="sedona-advantages advantage2">
-			<h2 class="content-title blue">там есть мост дьяволв</h2>
-			<p>да по нему пможно пройти! если конечно осмелитесь</p>
-			<img src="" alt="devil's bridge">
+		<section class="sedona-bridge">
+			<div class="sedona-bridge__wrap">
+				<h2 class="content-title blue">там есть мост дьяволв</h2>
+				<p class="cotent-text content-text--white">да по нему пможно пройти! если конечно осмелитесь</p>
+			</div>
+				<figure class="sedona-bridge__img">
+					<img src="" alt="devil's bridge">
+				</figure>
 		</section>
-		<section class="sedona-advantages advantage345">
-			<div>
-				<h2 class="content-title black">небольшпя площадь</h2>
-				<p>все достапремичательности находяться очень близко!</p>
-			</div>
-			<div>
-				<h2 class="content-title black">красивая дорога</h2>
-				<p>все достапремичательности находяться очень близко!</p>
-			</div>
-			<div>
-				<h2 class="content-title black">мало туристов</h2>
-				<p>большинство едет в гранд кантон и толпиться там!</p>
+
+		<section class="sedona-more-advantages">
+			<div class="sedona-more-advantages__wrap">
+				<div class="sedona-more-advantages__block">
+					<h2 class="content-title-h2 content-title-h2--black">небольшпя площадь</h2>
+					<p class="cotent-text">все достапремичательности находяться очень близко!</p>
+				</div>
+				<div class="sedona-more-advantages__block">
+					<h2 class="content-title-h2 content-title-h2--black">красивая дорога</h2>
+					<p class="cotent-text">все достапремичательности находяться очень близко!</p>
+				</div>
+				<div class="sedona-more-advantages__block">
+					<h2 class="content-title-h2 content-title-h2--black">мало туристов</h2>
+					<p class="cotent-text">большинство едет в гранд кантон и толпиться там!</p>
+				</div>
 			</div>
 		</section>
 
-		<section class="hotels-select">
-			<p class="hotels-question">заинтересовались?</p>
-			<p>увжите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне!</p>
-			<h2>поиск гостиницы в седоне</h2>
-			<form action="" method="get">
-				<label for="date1">дата заезда</label>
-				<input type="date" name="date1">
-				<label for="date2">дата выезда</label>
-				<input type="date" name="date2">
-				<div class="people-select">
-					<div class="half-width">
-						<div class="number-select">
-							<label for="adults">Взрослые:</label>
-							<input type="text" value="2" readonly="readonly" name="adults">
-							<a class="minus" href="">-</a>
-							<a class="plus" href="">+</a>
+		<section class="sedona-hotels">
+			<div class="sedona-hotels__wrap">
+				<p class="sedona-hotels__invite">заинтересовались?</p>
+				<p  class="cotent-text content-text--hotels">увжите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне!</p>
+			</div>
+				<h3 class="sedona-hotels__title">поиск гостиницы в седоне</h3>
+			<div class="sedona-hotels__wrap">
+				<form class="sedona-hotels__book" action="" method="get">
+					<label for="date1">дата заезда</label>
+					<input type="date" name="date1">
+					<label for="date2">дата выезда</label>
+					<input type="date" name="date2">
+					<div class="people-select">
+						<div class="half-width">
+							<div class="number-select">
+								<label for="adults">Взрослые:</label>
+								<input type="text" value="2" readonly="readonly" name="adults">
+								<a class="minus" href="">-</a>
+								<a class="plus" href="">+</a>
+							</div>
+						</div>
+						<div class="half-width">
+							<div class="number-select">
+								<label for="children">Дети:</label>
+								<input type="text" value="0" readonly="readonly" name="children">
+								<a class="minus" href="">-</a>
+								<a class="plus" href="">+</a>
+							</div>
 						</div>
 					</div>
-					<div class="half-width">
-						<div class="number-select">
-							<label for="children">Дети:</label>
-							<input type="text" value="0" readonly="readonly" name="children">
-							<a class="minus" href="">-</a>
-							<a class="plus" href="">+</a>
-						</div>
-					</div>
-				</div>
-				<input type="submit" value="найти">
-			</form>
+					<input class="sedona-hotels__button" type="submit" value="найти">
+				</form>
+			</div>
 		</section>
 	</main>
 	
 	<footer>
 		<div class="sedona-map">
-			<img src="" alt="sedona-map">
+			<!-- временно ставлю код рисунка, но по макету видно что скрипт google maps должен быть-->
+			<figure class="sedona-map__img">
+				<img src="" alt="sedona-map">
+			</figure>
 		</div>
 		<div class="sedona-credits">
-			<a href="">#visitsedona</a>
-			<ul class="sedona-socials">
-				<li class="socials twitter"><a href=""></a></li>
-				<li class="socials fbook"><a href=""></a></li>
-				<li class="socvials ytube"><a href=""></a></li>
-			</ul>
-			<p>website by <img src="" alt="developers-logo"> for <img src="" alt="htmlacademy logo"></p>
+			<div class="sedona-credits__wrap">
+				<a class="sedona-credits__hashtags-links" href="">#visitsedona</a>
+				<ul class="sedona-credits__social-links">
+					<li class="twitter"><a href=""></a></li>
+					<li class="fbook"><a href=""></a></li>
+					<li class="ytube"><a href=""></a></li>
+				</ul>
+				<p class="sedona-credits__text">website by <img src="" alt="developers-logo"> for <img src="" alt="htmlacademy logo"></p>
+			</div>
 		</div>
 	</footer>
+
   <!-- <script src="js/script.js"></script> -->
 
 </body>
