@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
+<!--
+    Если ты везде используешь 2 пробела, используй 2 пробела как разделитель везде
+    Если 4, то тогда используй 4. Сейчас то так, то эдак
+-->
+
   <meta charset="utf-8">
   <title>HTML Academy: Sedona</title>
   <link rel="stylesheet" href="css/stylesheets/screen.css">
@@ -14,6 +18,9 @@
         <a class="header__logo" href=""><img src="img/logo.png" height="70" width="138" alt="sedona logo"></a>
         <nav class="header__menu--open">
             <ul>
+            <!--
+                А зачем id ниже у ссылок? А где обязательный параметр href у них?
+            -->
                 <li><a id="map">карта штата</a></li>
                 <li><a id="info">информация</a></li>
                 <li><a id="photo">фото и видео</a></li>
@@ -27,7 +34,13 @@
     </header>
 
     <section class="welcome">
-        <!-- Шрифтоа нет в макете, сделал все рисунком!!!
+        <!-- 
+          Шрифтов нет в макете, сделал все рисунком!!!
+
+          Да, шрифта нет, но надо делать разметку как делали
+          Потому что вся картинка должна фоновая подстраиваться, а надписи быть фиксированными и по центру
+          Никто не мешает тебя спрятать текст через CSS (используя line-height большой или text-indent), а блоки использовать чисто для картинок, которые нужно сделать отдельными background-ами
+        -->
 
         <h2 class="welcome__title">
             <span class="welcome__title--line-1">Welcome</span>
@@ -35,8 +48,6 @@
             <span class="welcome__title--line-3">Sedona</span>
         </h2>
         <blockquote class="welcome__quote">Because the grand canyon sucks!</blockquote>
-        -->
-
     </section>
     <main class="content--index">
       <header class="contentHeader">
@@ -70,21 +81,20 @@
       </section>
 
         <section class="sedonaBridge">
-            <!-- Проверь наименование классов -->
+            <!-- 
+              Проверь наименование классов 
+              Думаю что все ок, комментарий можешь убирать
+            -->
             <h2 class="contentTitle-h2 contentTitle-h2--white">там есть мост дьявола</h2>
             <p class="contentText contentText--white">да, по нему пможно пройти! если конечно вы осмелитесь</p>
             <img src="img/sedona-bridge.jpg" height="256" width="320" alt="devil's bridge">
         </section>
-        
-        <!-- 
-            Section тут не подходит, потому что у нас нет заголовка
-            И присмотрись опять же к разметке выше, лучше ниже использовать список, потому что
-            1) Более семантично
-            2) Нам будет гораздо проще контролировать разметку для разных девайсов
-            3) Мы сможем легко объединить стили ниже, с стилями выше (reasons)
-        -->
+
         <section class="sedona-moreAdvantages">
             <ul class="sedona-moreAdvantages__list">
+                <!--
+                    Что за классы такие странные n3 n4 n5?
+                -->
                 <li>
                     <h2 class="contentTitle-h2 contentTitle-h2--black n3">небольшая площадь</h2>
                     <p class="contentText">все достопремичательности находятся очень близко</p>
@@ -137,7 +147,13 @@
     
     <footer class="footer">
       <div class="sedona-map js-googleMaps">
-          <!-- временно ставлю код рисунка, но по макету видно что скрипт google maps должен быть-->
+          <!-- 
+            временно ставлю код рисунка, но по макету видно что скрипт google maps должен быть
+            Да все верно и это вообще должно даже остаться будет, как практика gracefull degradation
+            У кого нет поддержки JS все равно смогут увидеть карту
+
+            width и height параметры для изображений могут тебе мешать для адаптивности
+            -->
           <img src="img/sedona-map.jpg" height="594" width="320" alt="">
       
       <div class="footer__credits">
@@ -147,6 +163,15 @@
             <li><a class="socialBtn socialBtn-facebook" href=""></a></li>
             <li><a class="socialBtn socialBtn-youtube" href=""></a></li>
         </ul>
+        <!--
+            Семантично верно размечать логотипы изображениями
+            Но. Для оптимизаций лучше сделать фоном (я про лого htmlacademy и gluhanko)
+
+            Работая с фоном будет проще
+            а) Использовать разные изображения для retina / не retina девайсов
+            б) Можно использовать спрайты, тем самым оптимизировав запросы к серверу
+            в) Если мне не изменяет память там есть отдельные, цветные логотипы которые должны показываться при наведении
+        -->
         <p class="footer__credits__text">website by <a class="footer__link-htmlacademy" href=""><img src="img/site-developer.png" height="30" width="27" alt=""></a> for <a href=""><img src="img/htmlacademy.png" height="33" width="27" alt="htmlacademy logo"></a></p>
       </div>
     </footer>
