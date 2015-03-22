@@ -1,0 +1,77 @@
+.sedonaTown {
+  min-height: 870px;
+  background-color: $bgColor2;
+   .contentTitle-h2:after {
+      content: "— №1 —";
+    }
+}
+
+.contentTitle-h2 {
+  position: relative;
+  font-size: $fontSize * 1.8;
+  line-height: $lineHeight * 2.6;
+  padding: 40px 0 30px;
+  font-weight: bold;
+}
+
+.contentTitle-h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  margin-top: 5px;
+  left: 0;
+  right: 0;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.contentTitle-h2--white {
+  padding-top: 40px;
+  color: $color2;
+}
+
+.contentTitle-h2--black {
+  color: $color3;
+}
+
+.contentText {
+  padding: 20px 20px 40px;
+  font-size: $fontSize * 1.4;
+  line-height: $lineHeight * 2.1
+}
+
+.contentText--white {
+  color: $color2;
+}
+
+.sedonaReasons {
+  margin-top: -4px;
+  padding: 20px 20px 15px;
+  min-height: 420px;
+  background: $bgColor;
+    .sedonaReasons__item-apartment {
+      padding: 15px 0 15px 50px;
+      text-align: left;
+      background-image: url($path + "/img/sprites/reasons/sprite.png");
+      background-repeat: no-repeat;
+    }
+    .sedonaReasons__title {
+      padding: 5px 0 15px 0;
+      font-size: $fontSize * 1.8;
+      line-height: $lineHeight * 2.6;
+      color: $color3;
+      font-weight: bold;
+    }
+    .contentText {
+      padding: 0;
+    }
+    .home {
+      background-position: -60px -362px;
+    }
+    .gift {
+      background-position: -60px -205px;
+    }
+    .food {
+      background-position: -60px -45px;
+    }
+}

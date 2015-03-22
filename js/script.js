@@ -10,28 +10,28 @@ $( ".header__menuCloseBtn").click(function() {
 
 
 // scroll to sections 
-$("#map").click(function() {
+$("[href=#map]").click(function() {
     $('html, body').animate({
         scrollTop: $(".sedona-map").offset().top
     }, 1000);
 
 });
 
-$("#info").click(function() {
+$("[href=#info]").click(function() {
     $('html, body').animate({
         scrollTop: $(".contentHeader").offset().top
     }, 1000);
 
 });
 
-$("#photo").click(function() {
+$("[href=#photo]").click(function() {
     $('html, body').animate({
         scrollTop: $(".sedonaBridge").offset().top
     }, 1000);
 
 });
 
-$("#hotels").click(function() {
+$("[href=#hotels]").click(function() {
     $('html, body').animate({
         scrollTop: $(".sedonaHotels").offset().top
     }, 1000);

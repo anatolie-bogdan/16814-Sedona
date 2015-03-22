@@ -1,0 +1,20 @@
+// MIXINS
+
+@mixin marginsClear() {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin center() {
+  margin: 0 auto;
+}
+
+@mixin formText() {
+  font-family: $fontFamily;
+  font-size: $fontSize * 1.4;
+  line-height: $lineHeight * 2.6;
+  color: $color3;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+}

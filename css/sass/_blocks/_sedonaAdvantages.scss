@@ -1,0 +1,26 @@
+.sedona-moreAdvantages {
+  min-height: 505px;
+  margin-top: -4px;
+  background-color: #eee;
+    .sedona-moreAdvantages__list {
+      margin: 0 20px;
+        li:not(:last-child) {
+          border-bottom: 1px solid #d6d6d6;
+        }
+    }
+    .contentText {
+      padding: 20px 15px 30px;
+    }
+    .contentTitle-h2 {
+      padding-top: 30px;
+    }
+    li:first-child .contentTitle-h2:after {
+      content: "— №3 —";
+    }
+    li:nth-child(2) .contentTitle-h2:after {
+      content: "— №4 —";
+    }
+    li:last-child .contentTitle-h2:after {
+      content: "— №5 —";
+    }
+}

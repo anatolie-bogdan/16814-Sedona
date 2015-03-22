@@ -21,13 +21,13 @@ ul, ol {
   border: none;
 }
 
-ul, ol, li, p, h1, h2, h3, h4, img, fieldset {
+ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
   margin: 0;
   padding: 0;
   font-weight: normal;
 }
 
-.wrap {
+.wrapper {
   margin: 0 auto;
   max-width: 320px;
   box-shadow: 6px 0 3px -4px #999, -6px 0 3px -4px #999;
@@ -91,8 +91,8 @@ ul, ol, li, p, h1, h2, h3, h4, img, fieldset {
   cursor: pointer;
 }
 .header .header__menuOpenBtn {
-  left: 275px;
-  top: 15px;
+  right: 4.7%;
+  top: 25%;
   background: url("../../img/openMenu.png") no-repeat;
 }
 .header .header__menuCloseBtn {
@@ -106,9 +106,32 @@ ul, ol, li, p, h1, h2, h3, h4, img, fieldset {
   margin-top: 55px;
   background: linear-gradient(11deg, #ffffff 8%, rgba(0, 0, 0, 0) 8%), linear-gradient(-11deg, #ffffff 8%, rgba(0, 0, 0, 0) 8%), url("../../img/sedona-welcome.jpg") no-repeat;
 }
+.welcome .welcome__title {
+  padding-top: 45px;
+}
+.welcome .welcome__title span {
+  display: block;
+  margin-bottom: 60px;
+  text-indent: -9999px;
+}
+.welcome .welcome__title--line-1 {
+  height: 66px;
+  background: url("../../img/h2-line1.png") no-repeat center center;
+}
+.welcome .welcome__title--line-2 {
+  height: 48px;
+  background: url("../../img/h2-line2.png") no-repeat center center;
+}
+.welcome .welcome__quote {
+  display: block;
+  height: 54px;
+  background: url("../../img/h2-quote.png") no-repeat center center;
+  text-indent: -9999px;
+}
 
 .contentHeader {
   margin: 0 auto;
+  position: relative;
   min-height: 240px;
   line-height: 26px;
   background: linear-gradient(8deg, #81b3d2 8%, rgba(0, 0, 0, 0) 8%), linear-gradient(-8deg, #81b3d2 8%, rgba(0, 0, 0, 0) 8%);
@@ -141,10 +164,12 @@ ul, ol, li, p, h1, h2, h3, h4, img, fieldset {
 }
 
 .contentTitle-h2:after {
-  position: absolute;
   content: "";
-  top: 75px;
-  left: 133px;
+  position: absolute;
+  display: block;
+  margin-top: 5px;
+  left: 0;
+  right: 0;
   font-size: 14px;
   font-weight: normal;
 }
@@ -225,20 +250,14 @@ ul, ol, li, p, h1, h2, h3, h4, img, fieldset {
 .sedona-moreAdvantages .contentTitle-h2 {
   padding-top: 30px;
 }
-.sedona-moreAdvantages .n3:after {
+.sedona-moreAdvantages li:first-child .contentTitle-h2:after {
   content: "— №3 —";
-  left: 113px;
-  top: 65px;
 }
-.sedona-moreAdvantages .n4:after {
+.sedona-moreAdvantages li:nth-child(2) .contentTitle-h2:after {
   content: "— №4 —";
-  left: 113px;
-  top: 65px;
 }
-.sedona-moreAdvantages .n5:after {
+.sedona-moreAdvantages li:last-child .contentTitle-h2:after {
   content: "— №5 —";
-  left: 113px;
-  top: 65px;
 }
 
 .sedonaHotels {
@@ -409,14 +428,22 @@ ul, ol, li, p, h1, h2, h3, h4, img, fieldset {
   line-height: 26px;
   color: #000;
 }
-.footer__credits .footer__credits__text img {
+.footer__credits .footer__credits__text .footer__credits__link {
   display: inline-block;
-  padding: 0 7px;
-  height: 100%;
+  width: 27px;
+  height: 33px;
+  margin: 0 10px;
   vertical-align: middle;
-}
-.footer__credits .footer__link-htmlacademy {
+  vartical-align: bottom;
+  background-image: url("../../img/sprites/credits/credits.png");
+  background-repeat: no-repeat;
   text-indent: -9999px;
+}
+.footer__credits .footer__credits__text .gluhanko {
+  background-position: -57px -10px;
+}
+.footer__credits .footer__credits__text .htmlacademy {
+  background-position: -10px -10px;
 }
 
 .footer__credits__social-links {
@@ -444,3 +471,29 @@ ul, ol, li, p, h1, h2, h3, h4, img, fieldset {
 .footer__credits__social-links .socialBtn-youtube {
   background-position: -116px -3px;
 }
+
+/* media 480px rules 
+@media only screen and (min-width: 480px) {
+  .wrapper {
+    max-width: 100%;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .welcome {
+  min-height: 610px;
+  margin-top: 0;
+  background:
+    linear-gradient(11deg, $bgColor 8%, transparent 8%),
+    linear-gradient(-11deg, $bgColor 8%, transparent 8%),
+    url("../../img/sedona-welcome-768(480).jpg") no-repeat center center;
+  }
+
+  .contentHeader {
+    min-height: 240px * 1.5;
+  }
+}
+
+*/

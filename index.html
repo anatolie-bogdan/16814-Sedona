@@ -1,32 +1,73 @@
+﻿<!--
+    Если ты везде используешь 2 пробела, используй 2 пробела как разделитель везде
+    Если 4, то тогда используй 4. Сейчас то так, то эдак
+
+    *** поправил! ***
+-->
+
+<!--
+  А зачем id ниже у ссылок? А где обязательный параметр href у них?
+
+  *** поправил! ***
+-->
+
+<!-- 
+  Шрифтов нет в макете, сделал все рисунком!!!
+
+  Да, шрифта нет, но надо делать разметку как делали
+  Потому что вся картинка должна фоновая подстраиваться, а надписи быть фиксированными и по центру
+  Никто не мешает тебя спрятать текст через CSS (используя line-height большой или text-indent), а блоки использовать чисто для картинок, которые нужно сделать отдельными background-ами
+
+    *** а понял что ты имеешь ввиду
+    да согласен, поправил! ***
+-->
+
+<!--
+    Что за классы такие странные n3 n4 n5?
+
+    *** поправил! ***
+-->
+
+<!-- 
+  width и height параметры для изображений могут тебе мешать для адаптивности
+
+  *** да, согласен, но на момент верстки про адаптивность я мало что знал, в общем поправил! ***
+-->
+
+<!--
+    Семантично верно размечать логотипы изображениями
+    Но. Для оптимизаций лучше сделать фоном (я про лого htmlacademy и gluhanko)
+
+    Работая с фоном будет проще
+    а) Использовать разные изображения для retina / не retina девайсов
+    б) Можно использовать спрайты, тем самым оптимизировав запросы к серверу
+    в) Если мне не изменяет память там есть отдельные, цветные логотипы которые должны показываться при наведении
+
+    *** поправил! цветных логотипов не нашел! ***
+-->
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<!--
-    Если ты везде используешь 2 пробела, используй 2 пробела как разделитель везде
-    Если 4, то тогда используй 4. Сейчас то так, то эдак
--->
-
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>HTML Academy: Sedona</title>
   <link rel="stylesheet" href="css/stylesheets/screen.css">
   <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div class="wrap">
+  <div class="wrapper">
     <header class="header">
       <div class="header__position">
         <a class="header__logo" href=""><img src="img/logo.png" height="70" width="138" alt="sedona logo"></a>
         <nav class="header__menu--open">
-            <ul>
-            <!--
-                А зачем id ниже у ссылок? А где обязательный параметр href у них?
-            -->
-                <li><a id="map">карта штата</a></li>
-                <li><a id="info">информация</a></li>
-                <li><a id="photo">фото и видео</a></li>
-                <li><a id="hotels">гостиницы</a></li>
-                <button type="button" class="header__menuCloseBtn"></button>
-            </ul>
+          <ul>
+            <li><a href="#map">карта штата</a></li>
+            <li><a href="#info">информация</a></li>
+            <li><a href="#photo">фото и видео</a></li>
+            <li><a href="#hotels">гостиницы</a></li>
+            <button type="button" class="header__menuCloseBtn"></button>
+          </ul>
         </nav>
 
         <button type="button" class="header__menuOpenBtn"></button>
@@ -34,21 +75,14 @@
     </header>
 
     <section class="welcome">
-        <!-- 
-          Шрифтов нет в макете, сделал все рисунком!!!
-
-          Да, шрифта нет, но надо делать разметку как делали
-          Потому что вся картинка должна фоновая подстраиваться, а надписи быть фиксированными и по центру
-          Никто не мешает тебя спрятать текст через CSS (используя line-height большой или text-indent), а блоки использовать чисто для картинок, которые нужно сделать отдельными background-ами
-        -->
-
-        <h2 class="welcome__title">
-            <span class="welcome__title--line-1">Welcome</span>
-            <span class="welcome__title--line-2">to the gorgeous</span>
-            <span class="welcome__title--line-3">Sedona</span>
-        </h2>
-        <blockquote class="welcome__quote">Because the grand canyon sucks!</blockquote>
+      <h2 class="welcome__title">
+        <span class="welcome__title--line-1">Welcome
+        to the gorgeous</span>
+        <span class="welcome__title--line-2">Sedona</span>
+      </h2>
+      <blockquote class="welcome__quote">Because the grand canyon sucks!</blockquote>
     </section>
+
     <main class="content--index">
       <header class="contentHeader">
         <h1 class="indexTitle">Седона - небольшой городок в аризоне, заслуживающий большего!</h1>
@@ -56,123 +90,96 @@
       </header>
 
       <section class="sedonaTown">
-          <h2 class="contentTitle-h2 contentTitle-h2--white">настоящий городок</h2>
-          <p class="contentText contentText--white">седона не атракцион для туристов, там течет своя жизнь</p>
-          <img src="img/sedona-town.jpg" height="256" width="320" alt="sedona town">
-          
-          <!-- 
-              Присмотрись к новой разметке. Она поможет нам гибко разметить эти блоки для дестопа и мобайла, не меняя html 
-              Она более семантична, по той простой причине, что для разметки списка, мы используем элемент список 
-          -->
-          <ul class="sedonaReasons">
-              <li class="sedonaReasons__item-apartment home">
-                  <h3 class="sedonaReasons__title">жилье</h3>
-                  <p class="contentText contentText--reasons">рекомендум пожить в настоящем мотеле, все как в кино!</p>
-              </li>
-              <li class="sedonaReasons__item-apartment gift">
-                  <h3 class="sedonaReasons__title">сувениры</h3>
-                  <p class="contentText">не только китайского, но и местного производства!</p>
-              </li>
-              <li class="sedonaReasons__item-apartment food">
-                  <h3 class="sedonaReasons__title">еда</h3>
-                  <p class="contentText">всегда заказывайте фирменный бургер, вы не разочаруйтесь!</p>
-              </li>                                
-          </ul>
+        <h2 class="contentTitle-h2 contentTitle-h2--white">настоящий городок</h2>
+        <p class="contentText contentText--white">седона не атракцион для туристов, там течет своя жизнь</p>
+        <img src="img/sedona-town.jpg" height="256" width="320" alt="sedona town">
+        
+        <ul class="sedonaReasons">
+          <li class="sedonaReasons__item-apartment home">
+              <h3 class="sedonaReasons__title">жилье</h3>
+              <p class="contentText contentText--reasons">рекомендум пожить в настоящем мотеле, все как в кино!</p>
+          </li>
+          <li class="sedonaReasons__item-apartment gift">
+              <h3 class="sedonaReasons__title">сувениры</h3>
+              <p class="contentText">не только китайского, но и местного производства!</p>
+          </li>
+          <li class="sedonaReasons__item-apartment food">
+              <h3 class="sedonaReasons__title">еда</h3>
+              <p class="contentText">всегда заказывайте фирменный бургер, вы не разочаруйтесь!</p>
+          </li>                                
+        </ul>
       </section>
 
-        <section class="sedonaBridge">
-            <!-- 
-              Проверь наименование классов 
-              Думаю что все ок, комментарий можешь убирать
-            -->
-            <h2 class="contentTitle-h2 contentTitle-h2--white">там есть мост дьявола</h2>
-            <p class="contentText contentText--white">да, по нему пможно пройти! если конечно вы осмелитесь</p>
-            <img src="img/sedona-bridge.jpg" height="256" width="320" alt="devil's bridge">
-        </section>
+      <section class="sedonaBridge">
+        <h2 class="contentTitle-h2 contentTitle-h2--white">там есть мост дьявола</h2>
+        <p class="contentText contentText--white">да, по нему пможно пройти! если конечно вы осмелитесь</p>
+        <img src="img/sedona-bridge.jpg" height="256" width="320" alt="devil's bridge">
+      </section>
 
-        <section class="sedona-moreAdvantages">
-            <ul class="sedona-moreAdvantages__list">
-                <!--
-                    Что за классы такие странные n3 n4 n5?
-                -->
-                <li>
-                    <h2 class="contentTitle-h2 contentTitle-h2--black n3">небольшая площадь</h2>
-                    <p class="contentText">все достопремичательности находятся очень близко</p>
-                </li>
-                <li>
-                    <h2 class="contentTitle-h2 contentTitle-h2--black n4">красивая дорога</h2>
-                    <p class="contentText">ехать в седону из лас-вегаса совсем не скучно!</p>
-                </li>
-                <li>
-                    <h2 class="contentTitle-h2 contentTitle-h2--black n5">мало туристов</h2>
-                    <p class="contentText">большинство едет в гранд каньон и толпится там</p>
-                </li>                                
-            </ul>
-        </section>
+      <section class="sedona-moreAdvantages">
+        <ul class="sedona-moreAdvantages__list">
+          <li>
+            <h2 class="contentTitle-h2 contentTitle-h2--black">небольшая площадь</h2>
+            <p class="contentText">все достопремичательности находятся очень близко</p>
+          </li>
+          <li>
+            <h2 class="contentTitle-h2 contentTitle-h2--black">красивая дорога</h2>
+            <p class="contentText">ехать в седону из лас-вегаса совсем не скучно!</p>
+          </li>
+          <li>
+            <h2 class="contentTitle-h2 contentTitle-h2--black">мало туристов</h2>
+            <p class="contentText">большинство едет в гранд каньон и толпится там</p>
+          </li>                                
+        </ul>
+      </section>
 
-        <section class="sedonaHotels">
-            <div class="sedonaHotels__invite">Заинтересовались?</div>
-            <p class="contentText contentText--hotels">Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне</p>
+      <section class="sedonaHotels">
+        <div class="sedonaHotels__invite">Заинтересовались?</div>
+        <p class="contentText contentText--hotels">Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне</p>
 
-            <h2 class="sedonaHotels__title">поиск гостиницы в седоне</h2>
-            <form class="sedonaHotels__book form" action="" method="get">
-                <fieldset>
-                    <label class="form__label" for="date1">дата заезда:</label>
-                    <input class="form__inputField" type="date" name="date1" id="date1" required>
-                    <button type="button" class="form__dateBtn btnPosition1"></button>
+        <h2 class="sedonaHotels__title">поиск гостиницы в седоне</h2>
+        <form class="sedonaHotels__book form" action="" method="get">
+          <fieldset>
+            <label class="form__label" for="date1">дата заезда:</label>
+            <input class="form__inputField" type="date" name="date1" id="date1" required>
+            <button type="button" class="form__dateBtn btnPosition1"></button>
 
-                    <label class="form__label" for="date2">дата выезда:</label>
-                    <input class="form__inputField" type="date" name="date2" id="date2" required>
-                    <button type="button" class="form__dateBtn btnPosition2"></button>
-                </fieldset>
-                
-                <fieldset class="half-width fieldsetLeft">
-                    <label class="form__label" for="adults">Взрослые:</label>   
-                        <button type="button" class="form__counterBtn form__counterBtn--minus"></button>
-                        <input class="form__inputField form__inputField--left" type="number" value="2" name="adults" min="1">
-                        <button type="button" class="form__counterBtn form__counterBtn--plus"></button>
-                </fieldset>
-                    
-                <fieldset class="half-width fieldsetRight">
-                    <label class="form__label" for="kids">Дети:</label>
-                        <button type="button" class="form__counterBtn form__counterBtn--minus"></button>
-                        <input class="form__inputField form__inputField--right" type="number" value="0" name="kids" min="0">
-                        <button type="button" class="form__counterBtn form__counterBtn--plus"></button>
-                </fieldset>
+            <label class="form__label" for="date2">дата выезда:</label>
+            <input class="form__inputField" type="date" name="date2" id="date2" required>
+            <button type="button" class="form__dateBtn btnPosition2"></button>
+          </fieldset>
+          
+          <fieldset class="half-width fieldsetLeft">
+            <label class="form__label" for="adults">Взрослые:</label>   
+              <button type="button" class="form__counterBtn form__counterBtn--minus"></button>
+              <input class="form__inputField form__inputField--left" type="number" value="2" name="adults" min="1">
+              <button type="button" class="form__counterBtn form__counterBtn--plus"></button>
+          </fieldset>
+              
+          <fieldset class="half-width fieldsetRight">
+            <label class="form__label" for="kids">Дети:</label>
+              <button type="button" class="form__counterBtn form__counterBtn--minus"></button>
+              <input class="form__inputField form__inputField--right" type="number" value="0" name="kids" min="0">
+              <button type="button" class="form__counterBtn form__counterBtn--plus"></button>
+          </fieldset>
 
-                <input class="sedona-hotels__button" type="submit" value="найти">
-            </form>
-        </section>
+          <input class="sedona-hotels__button" type="submit" value="найти">
+        </form>
+      </section>
     </main>
     
     <footer class="footer">
       <div class="sedona-map js-googleMaps">
-          <!-- 
-            временно ставлю код рисунка, но по макету видно что скрипт google maps должен быть
-            Да все верно и это вообще должно даже остаться будет, как практика gracefull degradation
-            У кого нет поддержки JS все равно смогут увидеть карту
-
-            width и height параметры для изображений могут тебе мешать для адаптивности
-            -->
-          <img src="img/sedona-map.jpg" height="594" width="320" alt="">
+        <img src="img/sedona-map.jpg" alt="sedona map">
       
       <div class="footer__credits">
         <a class="footer__credits__hashtag-link" href="">#visitsedona</a>
         <ul class="footer__credits__social-links">
-            <li><a class="socialBtn socialBtn-twitter" href=""></a></li>
-            <li><a class="socialBtn socialBtn-facebook" href=""></a></li>
-            <li><a class="socialBtn socialBtn-youtube" href=""></a></li>
+          <li><a class="socialBtn socialBtn-twitter" href=""></a></li>
+          <li><a class="socialBtn socialBtn-facebook" href=""></a></li>
+          <li><a class="socialBtn socialBtn-youtube" href=""></a></li>
         </ul>
-        <!--
-            Семантично верно размечать логотипы изображениями
-            Но. Для оптимизаций лучше сделать фоном (я про лого htmlacademy и gluhanko)
-
-            Работая с фоном будет проще
-            а) Использовать разные изображения для retina / не retina девайсов
-            б) Можно использовать спрайты, тем самым оптимизировав запросы к серверу
-            в) Если мне не изменяет память там есть отдельные, цветные логотипы которые должны показываться при наведении
-        -->
-        <p class="footer__credits__text">website by <a class="footer__link-htmlacademy" href=""><img src="img/site-developer.png" height="30" width="27" alt=""></a> for <a href=""><img src="img/htmlacademy.png" height="33" width="27" alt="htmlacademy logo"></a></p>
+        <p class="footer__credits__text">website by <a class="footer__credits__link gluhanko" href=""></a> for <a class="footer__credits__link htmlacademy" href=""></a></p>
       </div>
     </footer>
   </div>

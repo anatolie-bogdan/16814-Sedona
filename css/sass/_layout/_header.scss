@@ -1,0 +1,71 @@
+// header
+.header {
+  position: fixed;
+  width: $width;
+  max-height: 63px;
+  top: 0;
+  z-index: 1000;
+  opacity: 0.9;
+  background-color: $bgColor;
+  box-shadow:
+    6px 0 3px -4px #999,
+    -6px 0 3px -4px #999;
+    .header__position {
+      position: relative;
+    }
+    .header__logo {
+      display: block;
+      width: 138px;
+      height: 70px;
+      margin: 0 auto;
+    }
+    .header__menu {
+      display: none;
+    }
+    .header__menu--open{
+      position: absolute;
+      display: none;
+      width: 100%;
+      z-index: 1000;
+        ul {
+          position: relative;
+        }
+        li {
+          border-bottom: 1px solid #678fa8;
+        }
+        li:not(:first-of-type) {
+          border-top: 1px solid #9ac2db;
+        }
+        a {
+          display: block;
+          width: 100%;
+          padding: 16px 0;
+          font-size: $fontSize * 1.8;
+          //line-height: $lineHeight * 4;
+          font-weight: bold;
+          text-align: center;
+          text-decoration: none;
+          cursor: pointer;
+          color: $bgColor;
+          background: $bgColor2;
+        }
+    }
+    button {
+      position: absolute;
+      display: block;
+      width: 23px;
+      height: 22px;
+      border: none;
+      cursor: pointer;
+    }
+    .header__menuOpenBtn {
+      right: 4.7%;
+      top: 25%;
+      background: url($path + '/img/openMenu.png') no-repeat;
+    }
+    .header__menuCloseBtn {
+      top: 17px;
+      right: 20px;
+      background: url($path + '/img/closeMenu.png') no-repeat;
+    }
+}

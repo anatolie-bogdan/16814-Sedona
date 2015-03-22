@@ -1,0 +1,36 @@
+// common rules
+html {
+  @include marginsClear();
+  font-size: 16px;
+  font-family: $fontFamily;
+  text-align: center;
+  color: $color;
+  text-transform: uppercase;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
+
+body {
+  @extend html;
+  font-size: $baseFontSize;
+}
+
+ul, ol {
+  list-style: none;
+  border: none;
+}
+
+ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
+  @include marginsClear();
+  font-weight: normal;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: $width;
+  box-shadow:
+    6px 0 3px -4px #999,
+    -6px 0 3px -4px #999; 
+}
+
