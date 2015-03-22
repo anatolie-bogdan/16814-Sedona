@@ -1,19 +1,29 @@
-// MIXINS
+// Mixins and Extends
 
-@mixin marginsClear() {
+@mixin inline-block($valign: $inline-block-alignment) {
+    display: inline-block;
+    vertical-align: $valign;
+}
+
+%marginsClear {
   margin: 0;
   padding: 0;
 }
 
-@mixin center() {
+%layoutCenter {
   margin: 0 auto;
 }
 
-@mixin formText() {
+%positionAbsoluteCenter {
+  left: 0;
+  right: 0;
+}
+
+%commonTextRules {
   font-family: $fontFamily;
   font-size: $fontSize * 1.4;
   line-height: $lineHeight * 2.6;
-  color: $color3;
+  color: map-get($colors, black);
   font-weight: bold;
   text-transform: uppercase;
   text-align: left;

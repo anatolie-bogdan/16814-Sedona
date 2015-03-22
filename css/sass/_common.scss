@@ -1,10 +1,11 @@
-// common rules
+// Common rules
+
 html {
-  @include marginsClear();
+  @extend %marginsClear;
   font-size: 16px;
   font-family: $fontFamily;
   text-align: center;
-  color: $color;
+  color: map-get($colors, gray);
   text-transform: uppercase;
   background-color: #fff;
   box-sizing: border-box;
@@ -22,15 +23,14 @@ ul, ol {
 }
 
 ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
-  @include marginsClear();
+  @extend %marginsClear;
   font-weight: normal;
 }
 
 .wrapper {
-  margin: 0 auto;
+  @extend %layoutCenter;
   max-width: $width;
   box-shadow:
     6px 0 3px -4px #999,
     -6px 0 3px -4px #999; 
 }
-

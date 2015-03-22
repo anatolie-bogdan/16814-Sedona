@@ -1,6 +1,7 @@
 .sedonaBridge {
   min-height: 440px;
-  background: $bgColor2;
+  background: map-get($bgColors, blue);
+  
     .contentTitle-h2:after {
       content: "— №2 —";
     }

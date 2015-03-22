@@ -2,27 +2,31 @@
   min-height: 390px;
   margin-top: 55px;
   background:
-    linear-gradient(11deg, $bgColor 8%, transparent 8%),
-    linear-gradient(-11deg, $bgColor 8%, transparent 8%),
+    linear-gradient(11deg, map-get($bgColors, white) 8%, transparent 8%),
+    linear-gradient(-11deg, map-get($bgColors, white) 8%, transparent 8%),
     url($path + '/img/sedona-welcome.jpg') no-repeat;
-      .welcome__title {
+
+      &__title {
         padding-top: 45px;
+
           span {
             display: block;
-            
             margin-bottom: 60px;
             text-indent: -9999px;
           }
+
+          &--line-1 {
+            height: 66px;
+            background: url($path + '/img/h2-line1.png') no-repeat center center;
+          }
+
+          &--line-2 {
+            height: 48px;
+            background: url($path + '/img/h2-line2.png') no-repeat center center;
+          }
       }
-    .welcome__title--line-1 {
-      height: 66px;
-      background: url($path + '/img/h2-line1.png') no-repeat center center;
-    }
-    .welcome__title--line-2 {
-      height: 48px;
-      background: url($path + '/img/h2-line2.png') no-repeat center center;
-    }
-    .welcome__quote {
+    
+    &__quote {
       display: block;
       height: 54px;
       background: url($path + '/img/h2-quote.png') no-repeat center center;
@@ -31,20 +35,21 @@
 }
 
 .contentHeader {
-  @include center();
+  @extend %layoutCenter;
   position: relative;
   min-height: 240px;
   line-height: $lineHeight * 2.6;
   background:
-    linear-gradient(8deg, $bgColor2 8%, transparent 8%),
-    linear-gradient(-8deg, $bgColor2 8%, transparent 8%);
+    linear-gradient(8deg, map-get($bgColors, blue) 8%, transparent 8%),
+    linear-gradient(-8deg, map-get($bgColors, blue) 8%, transparent 8%);
    
     .indexTitle {
       padding: 35px 30px;
       font-size: $fontSize * 1.8;
-      color: $color3;
+      color: map-get($colors, black);
       font-weight: bold;
     }
+
     .indexSubTitle {
       padding: 0 30px 25px;
       font-size: $fontSize * 1.4;

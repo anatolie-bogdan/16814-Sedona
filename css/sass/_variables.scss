@@ -5,10 +5,16 @@ $fontSize: 1em;
 $size: $fontSize / 10 + em;
 $fontFamily: 'PT Sans', sans-serif;
 $lineHeight: 10px;
-$color: #333;
-$color2: #fff;
-$color3: #000;
-$width: 320px;
-$bgColor: #fff;
-$bgColor2: #81b3d2;
+$colors: (
+  white: #fff,
+  black: #000,
+  gray: #333,
+  blue: #81b3d2
+);
+$bgColors: ( 
+  white: #fff,
+  blue: #81b3d2
+);
 $path: '../..';
+$width: 320px;
+$inline-block-alignment: middle;
