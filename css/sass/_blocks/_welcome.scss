@@ -5,6 +5,8 @@
     linear-gradient(11deg, map-get($bgColors, white) 8%, transparent 8%),
     linear-gradient(-11deg, map-get($bgColors, white) 8%, transparent 8%),
     url($path + '/img/sedona-welcome.jpg') no-repeat;
+  background-position: center;
+  background-size: 100%;
 
       &__title {
         padding-top: 45px;

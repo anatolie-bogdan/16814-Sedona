@@ -7,7 +7,7 @@
   top: 0;
   z-index: 1000;
   opacity: 0.9;
-  background-color: map-get($bgColors, white);
+  background: map-get($bgColors, white);
   box-shadow:
     6px 0 3px -4px #999,
     -6px 0 3px -4px #999;
@@ -16,10 +16,10 @@
     }
 
     &__logo {
-      display: block;
+      position: absolute;
       width: 138px;
       height: 70px;
-      @extend %layoutCenter;
+      @extend %positionAbsoluteCenter;
     }
 
     &__menu {
@@ -30,6 +30,7 @@
           display: none;
           width: 100%;
           z-index: 1000;
+          top: 70px;
             ul {
               position: relative;
             }
@@ -66,13 +67,14 @@
 
     &__menuOpenBtn {
       right: 4.7%;
-      top: 25%;
+      top: 15px;
       background: url($path + '/img/openMenu.png') no-repeat;
     }
-    
+
     &__menuCloseBtn {
       top: 17px;
-      right: 20px;
+      right: 4.7%;
       background: url($path + '/img/closeMenu.png') no-repeat;
     }
 }
+

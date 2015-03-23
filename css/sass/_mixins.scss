@@ -15,6 +15,7 @@
 }
 
 %positionAbsoluteCenter {
+  @extend %layoutCenter;
   left: 0;
   right: 0;
 }
