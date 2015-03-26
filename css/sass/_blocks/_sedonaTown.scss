@@ -88,7 +88,7 @@
 
 
 @media screen
-  and (min-width: 667px) {
+  and (min-width: $widthPad) {
 
 .sedonaTown {
   width: 100%;
@@ -103,12 +103,12 @@
 
     &__blockTitle {
       display: inline-block;
-      width: 32%;
+      width: 33%;
       height: 255px;
     }
 
     & img {
-      width: 68%;
+      width: 67%;
       height: auto;
       float: right;
       
@@ -120,7 +120,7 @@
 }
 
 .contentTitle-h2 {
-  width: 160px;
+  width: 59%;
   margin: 0 auto;
   padding: 40px 45px 30px;
   font-size: $fontSize * 2.1;
@@ -136,7 +136,7 @@
 }
 
 .contentText {
-  padding: 20px 45px 0;
+  padding: 20px 17% 0;
   font-size: $fontSize * 1.4;
   line-height: $lineHeight * 2.1;
 
@@ -157,28 +157,31 @@
       width: 33%;
       padding: 0;
       text-align: center;
-    }
 
-    &__item-apartment:before {
-      position: absolute;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      display: block;
-      content: '';
-      width: 90px;
-      height: 90px;
-      background: url($path + "/img/sprites/reasons/sprite-768(1x).png");
-      background-repeat: no-repeat;
+        &:before {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 10px;
+          margin: 0 auto;
+          display: block;
+          content: '';
+          width: 80px;
+          height: 80px;
+          background: url($path + "/img/sprites/reasons/sprite-768(1x).png");
+          background-repeat: no-repeat;
+        }
     }
 
     &__title {
+      width: 65%;
+      margin: 0 auto;
       padding: 110px 0 15px 0;
       font-size: $fontSize * 2.1;
     }
 
     .contentText {
-      width: 168px;
+      width: 67%;
       margin: 0 auto;
       padding: 0;
     }
@@ -190,14 +193,22 @@
     }
 
     .home:before {
-      background-position: -330px -35px;
+      background-position: -335px -35px;
     }
     .gift:before {
-      background-position: -180px -35px;
+      background-position: -185px -37px;
     }
     .food:before {
-      background-position: -32px -35px;
+      background-position: -35px -35px;
     }
+  }
 }
 
+
+@media screen
+  and (min-width: $widthDesktop) {
+
+  .contentTitle-h2 {
+    width: 49%;
+  }
 }

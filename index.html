@@ -59,7 +59,14 @@
   <div class="wrapper">
     <header class="header">
       <div class="header__position">
-        <a class="header__logo" href=""><img src="img/logo.png" height="70" width="138" alt="sedona logo"></a>
+        <a class="header__logo" href="">
+          <picture>
+            <img alt="sedona logo" width="67px" height="56px" 
+              src="img/logo-sedona@1x.png"
+              srcset="img/logo-sedona@2x.png 2x,
+                      img/logo-sedona@3x.png 3x">
+          </picture>
+        </a>
         <nav class="header__menu--open">
           <ul>
             <li><a href="#map">карта штата</a></li>
@@ -76,9 +83,9 @@
 
     <section class="welcome">
       <h2 class="welcome__title">
-        <span class="welcome__title--line-1">Welcome
-        to the gorgeous</span>
-        <span class="welcome__title--line-2">Sedona</span>
+        <span class="welcome__title--line-1">Welcome</span>
+        <span class="welcome__title--line-2">to the gorgeous</span>
+        <span class="welcome__title--line-3">Sedona</span>
       </h2>
       <blockquote class="welcome__quote">Because the grand canyon sucks!</blockquote>
     </section>
@@ -95,10 +102,14 @@
             <h2 class="contentTitle-h2 contentTitle-h2--white">настоящий городок</h2>
             <p class="contentText contentText--white">седона не атракцион для туристов, там течет своя жизнь</p>
           </div>
-          <img src="img/sedona-town.jpg" alt="sedona town">
+          <picture>
+              <source media="(min-width:480px)" srcset="img/photo-city@1x.jpg">
+              <source media="(min-width:800px)" srcset="img/photo-city@2x.jpg">           
+              <img alt="sedona town"
+                src="img/sedona-town.jpg">
+          </picture>
         </header>
 
-        
         <ul class="sedonaReasons">
           <li class="sedonaReasons__item-apartment home">
               <h3 class="sedonaReasons__title">жилье</h3>
@@ -116,9 +127,16 @@
       </section>
 
       <section class="sedonaBridge">
-        <h2 class="contentTitle-h2 contentTitle-h2--white">там есть мост дьявола</h2>
-        <p class="contentText contentText--white">да, по нему пможно пройти! если конечно вы осмелитесь</p>
-        <img src="img/sedona-bridge.jpg" height="256" width="320" alt="devil's bridge">
+        <div class="sedonaBridge__blockTitle">
+          <h2 class="contentTitle-h2 contentTitle-h2--white">там есть мост дьявола</h2>
+          <p class="contentText contentText--white">да, по нему пможно пройти! если конечно вы осмелитесь</p>
+        </div>
+        <picture>
+          <source media="(min-width:480px)" srcset="img/photo-bridge@1x.jpg">
+          <source media="(min-width:800px)" srcset="img/photo-bridge@1x.jpg">           
+          <img alt="devil's bridge"
+            src="img/sedona-bridge.jpg">
+        </picture>
       </section>
 
       <section class="sedona-moreAdvantages">
@@ -175,8 +193,11 @@
     
     <footer class="footer">
       <div class="sedona-map js-googleMaps">
-        <img src="img/sedona-map.jpg" alt="sedona map">
-      
+        <picture>
+          <source media="(min-width:480px)" srcset="img/sedona-map-768(1x).jpg">
+          <source media="(min-width:800px)" srcset="img/sedona-map-1200(1x).jpg">           
+          <img src="img/sedona-map.jpg" alt="sedona map">
+        </picture>
       <div class="footer__credits">
         <a class="footer__credits__hashtag-link" href="">#visitsedona</a>
         <ul class="footer__credits__social-links">
@@ -190,6 +211,7 @@
     </footer>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="js/picturefill.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

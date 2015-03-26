@@ -31,3 +31,48 @@
       content: "— №5 —";
     }
 }
+
+
+@media screen
+  and (min-width: $widthPad) {
+
+  .sedona-moreAdvantages {
+    min-height: 255px;
+    margin-top: 0;
+
+      &__list {
+        margin: 0;
+        padding-top: 45px;
+
+          li {
+            display: inline-block;
+            width: 33%;
+          }
+
+          li:not(:last-child) {
+            border-bottom: none;
+          }
+      }
+
+      .contentText {
+        padding: 20px 15% 0;
+        font-size: $fontSize * 1.4;
+        line-height: $lineHeight * 2.1;
+      }
+
+      .contentTitle-h2 {
+        width: 59%;
+        margin: 0 auto;
+        padding: 40px 45px 30px;
+        padding-top: 0;
+      }
+  }
+}
+
+@media screen
+  and (min-width: $widthDesktop) {
+
+  .sedona-moreAdvantages .contentTitle-h2 {
+    width: 33%;
+  }
+}

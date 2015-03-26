@@ -1,7 +1,7 @@
-
 .sedona-map {
   position: relative;
-  min-height: 594px;
+  max-height: 594px;
+  overflow: hidden;
 
     & img {
       width: 100%;
@@ -22,7 +22,7 @@
 .footer__credits {
   position: absolute;
   width: 100%;
-  height: 240px;
+  min-height: 240px;
   background-color: rgba(map-get($bgColors, white), 0.85);
   bottom: 0;
 
@@ -87,4 +87,35 @@
     &-youtube {
       background-position: -116px -3px;
     }
+}
+
+
+@media screen
+  and (min-width: $widthPad) {
+
+  .sedona-map:before {
+    diplay: none;
+  }
+
+  .footer__credits {
+    min-height: 120px;
+
+      &__hashtag-link {
+        display: inline-block;
+        width: 33%;
+        margin: 0;
+        line-height: 120px;
+      }
+
+      &__text {
+        display: inline-block;
+        width: 33%;
+      }
+  }
+
+  .footer__credits__social-links {
+    display: inline-block;
+    width: 33%;
+    margin-bottom: 0;
+  }
 }

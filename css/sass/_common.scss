@@ -7,7 +7,7 @@ html {
   text-align: center;
   color: map-get($colors, gray);
   text-transform: uppercase;
-  background-color: #fff;
+  background-color: map-get($bgColors, gray);
   box-sizing: border-box;
   border-collapse: collapse;
 }
@@ -30,7 +30,17 @@ ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
 .wrapper {
   @extend %layoutCenter;
   max-width: $width;
-  box-shadow:
-    6px 0 3px -4px #999,
+    
+    /*6px 0 3px -4px #999,
     -6px 0 3px -4px #999; 
+    */
+}
+
+@media screen
+  and (min-width: $widthDesktop) {
+  
+  .wrapper {
+    width: $widthDesktop;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.2);
+  }
 }
