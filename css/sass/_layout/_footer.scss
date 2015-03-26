@@ -78,6 +78,14 @@
   background-image: url($path + "/img/sprites/socials/sprite.png");
   background-repeat: no-repeat;
 
+    &:hover {
+      background-color: #669ec0;
+    }
+
+    &:active {
+      background-color: #5496bd;
+    }
+
     &-twitter {
       background-position: -55px -3px;
     }

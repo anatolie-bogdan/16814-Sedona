@@ -114,6 +114,12 @@ ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
   color: #fff;
   background: #81b3d2;
 }
+.header__menu--open a:hover {
+  background: #669ec0;
+}
+.header__menu--open a:active {
+  background: #5496bd;
+}
 .header button {
   position: absolute;
   display: block;
@@ -125,7 +131,7 @@ ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
 .header__menuOpenBtn {
   right: 4.7%;
   top: 15px;
-  background: url("../../img/openMenu.png") no-repeat;
+  background: url("../../img/icon-menu.svg") no-repeat;
 }
 .header__menuCloseBtn {
   top: 17px;
@@ -180,6 +186,12 @@ ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
     font-weight: bold;
     color: #000;
     background: none;
+  }
+  .header__menu--open a:hover {
+    color: #81b3d2;
+  }
+  .header__menu--open a:active {
+    color: #333;
   }
   .header button {
     display: none;
@@ -283,6 +295,12 @@ ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
   background-color: #81b3d2;
   background-image: url("../../img/sprites/socials/sprite.png");
   background-repeat: no-repeat;
+}
+.socialBtn:hover {
+  background-color: #669ec0;
+}
+.socialBtn:active {
+  background-color: #5496bd;
 }
 .socialBtn-twitter {
   background-position: -55px -3px;
@@ -750,12 +768,15 @@ ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
 .form input {
   width: 100%;
   height: 35px;
-  border: none;
+  border: 2px solid #f2f2f2;
   background: #f2f2f2;
   margin: 10px 0 25px;
   padding-left: 15px;
   padding-right: 35px;
   box-sizing: border-box;
+}
+.form input:focus {
+  background: white;
 }
 .form button {
   position: absolute;
@@ -767,7 +788,7 @@ ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
   background-color: #f2f2f2;
 }
 .form__dateBtn {
-  background-image: url("../../img/date.png");
+  background-image: url("../../img/icon-calendar.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   right: 3%;
@@ -789,6 +810,12 @@ ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
   border: none;
   cursor: pointer;
 }
+.form .sedona-hotels__button:hover {
+  background: #669ec0;
+}
+.form .sedona-hotels__button:active {
+  background: #5496bd;
+}
 
 .half-width {
   display: inline-block;
@@ -804,12 +831,12 @@ ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
   background-position: 62% 57%;
 }
 .half-width .form__counterBtn--minus {
-  background-image: url("../../img/minus.png");
+  background-image: url("../../img/icon-minus.svg");
   left: 0;
   top: 36px;
 }
 .half-width .form__counterBtn--plus {
-  background-image: url("../../img/plus.png");
+  background-image: url("../../img/icon-plus.svg");
   left: 78px;
   top: 36px;
 }
@@ -913,12 +940,10 @@ ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
     background-position: 62% 57%;
   }
   .half-width .form__counterBtn--minus {
-    background-image: url("../../img/minus.png");
     left: 115px;
     top: 3px;
   }
   .half-width .form__counterBtn--plus {
-    background-image: url("../../img/plus.png");
     left: 190px;
     top: 3px;
   }

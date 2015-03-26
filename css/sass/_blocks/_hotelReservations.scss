@@ -48,12 +48,16 @@
       @extend %commonTextRules;
       width: 100%;
       height: 35px;
-      border: none;
+      border: 2px solid #f2f2f2;
       background: #f2f2f2;
       margin: 10px 0 25px;
       padding-left: 15px;
       padding-right: 35px;
       box-sizing: border-box;
+
+        &:focus {
+          background: white;
+        }
     }
 
     button {
@@ -67,7 +71,7 @@
     }
 
     &__dateBtn {
-      background-image: url($path + '/img/date.png');
+      background-image: url($path + '/img/icon-calendar.svg');
       background-repeat: no-repeat;
       background-position: 50% 50%;
       right: 3%;
@@ -92,6 +96,14 @@
       text-align: center;
       border: none;
       cursor: pointer;
+
+        &:hover {
+          background: #669ec0;
+        }
+
+        &:active {
+          background: #5496bd;
+        }
     }
 }
 
@@ -109,13 +121,13 @@
       background-position: 62% 57%;
 
         &--minus {
-          background-image: url($path + '/img/minus.png');
+          background-image: url($path + '/img/icon-minus.svg');
           left: 0;
           top: 36px;
         }
 
         &--plus {
-          background-image: url($path + '/img/plus.png');
+          background-image: url($path + '/img/icon-plus.svg');
           left: 78px;
           top: 36px;
         }
@@ -237,13 +249,13 @@
       background-position: 62% 57%;
 
         &--minus {
-          background-image: url($path + '/img/minus.png');
+          
           left: 115px;
           top: 3px;
         }
 
         &--plus {
-          background-image: url($path + '/img/plus.png');
+          
           left: 190px;
           top: 3px;
         }
