@@ -1,0 +1,159 @@
+.welcome {
+  min-height: 390px;
+  margin-top: 55px;
+  background:
+    //linear-gradient(11deg, map-get($bgColors, white) 8%, transparent 8%),
+    //linear-gradient(-11deg, map-get($bgColors, white) 8%, transparent 8%),
+    url($path + '/img/sedona-welcome.jpg') no-repeat;
+  background-position: top;
+  background-size: 100%;
+
+      &__title {
+        padding-top: 45px;
+
+          span {
+            display: block;
+            text-indent: -9999px;
+          }
+
+          &--line-1 {
+            margin-bottom: 10px;
+            height: 35px;
+            background: url($path + '/img/text-welcome.svg') no-repeat center center;
+            background-size: contain;
+          }
+
+          &--line-2 {
+            margin-bottom: 60px;
+            height: 24px;
+            background: url($path + '/img/text-tothegorgeous.svg') no-repeat center center;
+            background-size: contain;
+          }
+
+          &--line-3 {
+            margin-bottom: 60px;
+            height: 50px;
+            background: url($path + '/img/text-sedona.svg') no-repeat center center;
+            background-size: contain;
+          }
+      }
+    
+    &__quote {
+      display: block;
+      height: 55px;
+      background: url($path + '/img/text-becausecanyon.svg') no-repeat center center;
+      text-indent: -9999px;
+      background-size: contain;
+    }
+}
+
+.contentHeader {
+  @extend %layoutCenter;
+  position: relative;
+  min-height: 240px;
+  line-height: $lineHeight * 2.6;
+  background: map-get($bgColors, white)
+    linear-gradient(8deg, map-get($bgColors, blue) 8%, transparent 8%),
+    linear-gradient(-8deg, map-get($bgColors, blue) 8%, transparent 8%);
+   
+    .indexTitle {
+      padding: 35px 30px;
+      font-size: $fontSize * 1.8;
+      color: map-get($colors, black);
+      font-weight: bold;
+    }
+
+    .indexSubTitle {
+      padding: 0 30px 25px;
+      font-size: $fontSize * 1.4;
+    }
+}
+
+@media screen
+  and (min-width: 320px) {
+
+  .contentHeader {
+    background: none;
+  }
+}
+
+@media screen
+  and (min-width: $widthPad) {
+
+  .welcome {
+  min-height: 515px;
+  background:
+    url($path + '/img/sedona-welcome-768(1x).jpg') no-repeat;
+  background-position: top;
+  background-size: 100% auto;
+
+      &__title {
+        padding-top: 75px;
+
+          &--line-1 {
+            height: 50px;
+          }
+
+          &--line-2 {
+            margin-bottom: 45px;
+            height: 30px;
+          }
+
+          &--line-3 {
+            margin-bottom: 50px;
+            height: 80px;
+          }
+      }
+    
+    &__quote {
+      height: 80px;
+      background: url($path + '/img/text-becausecanyon.svg') no-repeat center center;
+    }
+  }
+
+  .contentHeader {
+    width: 550px;
+    min-height: 200px;
+    line-height: $lineHeight * 2.6;
+    background: none;
+   
+    .indexTitle {
+      padding: 45px 0 25px 0;
+      font-size: $fontSize * 2.1;
+    }
+
+    .indexSubTitle {
+      padding: 0;
+    }
+  }
+}
+
+
+@media screen
+  and (min-width: $widthDesktop) {
+
+  .welcome {
+    background:
+      url($path + '/img/sedona-welcome-1200(1x).jpg') no-repeat;
+    background-position: 50% 18.1%;
+    background-size: 100% auto;
+  }
+
+  .indexTitle {
+      padding-top: 60px !important;
+    }
+
+}
+
+
+// Retina
+@media 
+  (-webkit-min-device-pixel-ratio: 2), 
+  (min-resolution: 192dpi) { 
+
+  .welcome {
+    background:
+      url($path + '/img/sedona-welcome-1200(2x).jpg') no-repeat;
+      background-size: 100% auto;
+  }
+}

@@ -1,0 +1,46 @@
+// Common rules
+
+html {
+  @extend %marginsClear;
+  font-size: 16px;
+  font-family: $fontFamily;
+  text-align: center;
+  color: map-get($colors, gray);
+  text-transform: uppercase;
+  background-color: map-get($bgColors, gray);
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
+
+body {
+  @extend html;
+  font-size: $baseFontSize;
+}
+
+ul, ol {
+  list-style: none;
+  border: none;
+}
+
+ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
+  @extend %marginsClear;
+  font-weight: normal;
+}
+
+.wrapper {
+  @extend %layoutCenter;
+  max-width: $width;
+    
+    /*6px 0 3px -4px #999,
+    -6px 0 3px -4px #999; 
+    */
+}
+
+@media screen
+  and (min-width: $widthDesktop) {
+  
+  .wrapper {
+    width: $widthDesktop;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.2);
+  }
+}

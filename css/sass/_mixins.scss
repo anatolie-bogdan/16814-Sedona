@@ -1,0 +1,31 @@
+// Mixins and Extends
+
+@mixin inline-block($valign: $inline-block-alignment) {
+    display: inline-block;
+    vertical-align: $valign;
+}
+
+%marginsClear {
+  margin: 0;
+  padding: 0;
+}
+
+%layoutCenter {
+  margin: 0 auto;
+}
+
+%positionAbsoluteCenter {
+  @extend %layoutCenter;
+  left: 0;
+  right: 0;
+}
+
+%commonTextRules {
+  font-family: $fontFamily;
+  font-size: $fontSize * 1.4;
+  line-height: $lineHeight * 2.6;
+  color: map-get($colors, black);
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+}
