@@ -23,17 +23,17 @@ var
 
 
   minus[0].addEventListener("click", function() {
-    if (counter[0].value > 0)
+    if (counter[0].value > 1)
     travelTime.value--;
   });
 
   minus[1].addEventListener("click", function() {
-    if (counter[1].value > 0)
+    if (counter[1].value > 1)
     adults.value--;
   });
 
   minus[2].addEventListener("click", function() {
-    if (counter[2].value > 0)
+    if (counter[2].value > 1)
     children.value--;
   });
 
