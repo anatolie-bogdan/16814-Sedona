@@ -1,10 +1,10 @@
 // open and close menu
 
-$( ".header__menuOpenBtn").click(function() {
+$( ".header__menuOpenBtn").on('tap', function() {
   $( 'nav' ).show();
 });
 
-$( ".header__menuCloseBtn").click(function() {
+$( ".header__menuCloseBtn").on('tap', function() {
   $( 'nav' ).hide();
 });
 
