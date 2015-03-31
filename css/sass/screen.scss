@@ -1,5 +1,5 @@
 ﻿@import "compass";
-/*@import "normalize";*/
+@import "normalize";
 @import "variables";
 @import "mixins";
 @import "common";
@@ -10,4 +10,3 @@
 @import "_blocks/sedonaBridge";
 @import "_blocks/sedonaAdvantages";
 @import "_blocks/hotelReservations";
-@import "media";

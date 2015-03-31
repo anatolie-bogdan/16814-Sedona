@@ -5,6 +5,7 @@
 
     &__list {
       margin: 0 20px;
+      list-style-type: none;
 
         li:not(:last-child) {
           border-bottom: 1px solid #d6d6d6;
@@ -45,7 +46,8 @@
         padding-top: 45px;
 
           li {
-            display: inline-block;
+            display: block;
+            float: left;
             width: 33%;
           }
 

@@ -143,10 +143,12 @@
               background: none;
 
                 &:hover {
+                  background: none;
                   color: map-get($colors, blue);
                 }
 
                 &:active {
+                  background: none;
                   color: map-get($colors, gray);
                 }
             }

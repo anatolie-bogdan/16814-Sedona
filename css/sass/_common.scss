@@ -17,14 +17,25 @@ body {
   font-size: $baseFontSize;
 }
 
-ul, ol {
+/*ul, ol {
   list-style: none;
   border: none;
 }
+*/
 
 ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
   @extend %marginsClear;
   font-weight: normal;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }
 
 .wrapper {

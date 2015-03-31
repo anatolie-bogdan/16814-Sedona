@@ -1,52 +1,4 @@
-﻿<!--
-    Если ты везде используешь 2 пробела, используй 2 пробела как разделитель везде
-    Если 4, то тогда используй 4. Сейчас то так, то эдак
-
-    *** поправил! ***
--->
-
-<!--
-  А зачем id ниже у ссылок? А где обязательный параметр href у них?
-
-  *** поправил! ***
--->
-
-<!-- 
-  Шрифтов нет в макете, сделал все рисунком!!!
-
-  Да, шрифта нет, но надо делать разметку как делали
-  Потому что вся картинка должна фоновая подстраиваться, а надписи быть фиксированными и по центру
-  Никто не мешает тебя спрятать текст через CSS (используя line-height большой или text-indent), а блоки использовать чисто для картинок, которые нужно сделать отдельными background-ами
-
-    *** а понял что ты имеешь ввиду
-    да согласен, поправил! ***
--->
-
-<!--
-    Что за классы такие странные n3 n4 n5?
-
-    *** поправил! ***
--->
-
-<!-- 
-  width и height параметры для изображений могут тебе мешать для адаптивности
-
-  *** да, согласен, но на момент верстки про адаптивность я мало что знал, в общем поправил! ***
--->
-
-<!--
-    Семантично верно размечать логотипы изображениями
-    Но. Для оптимизаций лучше сделать фоном (я про лого htmlacademy и gluhanko)
-
-    Работая с фоном будет проще
-    а) Использовать разные изображения для retina / не retina девайсов
-    б) Можно использовать спрайты, тем самым оптимизировав запросы к серверу
-    в) Если мне не изменяет память там есть отдельные, цветные логотипы которые должны показываться при наведении
-
-    *** поправил! цветных логотипов не нашел! ***
--->
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
@@ -103,8 +55,8 @@
             <p class="contentText contentText--white">седона не атракцион для туристов, там течет своя жизнь</p>
           </div>
           <picture>
-              <source media="(min-width:480px)" srcset="img/photo-city@1x.jpg">
-              <source media="(min-width:800px)" srcset="img/photo-city@2x.jpg">           
+              <source media="(min-width:768px)" srcset="img/photo-city@1x.jpg">
+              <source media="(min-width:1024px)" srcset="img/photo-city@2x.jpg">           
               <img alt="sedona town"
                 src="img/sedona-town.jpg">
           </picture>
@@ -132,8 +84,8 @@
           <p class="contentText contentText--white">да, по нему пможно пройти! если конечно вы осмелитесь</p>
         </div>
         <picture>
-          <source media="(min-width:480px)" srcset="img/photo-bridge@1x.jpg">
-          <source media="(min-width:800px)" srcset="img/photo-bridge@1x.jpg">           
+          <source media="(min-width:768px)" srcset="img/photo-bridge@1x.jpg">
+          <source media="(min-width:1024px)" srcset="img/photo-bridge@1x.jpg">           
           <img alt="devil's bridge"
             src="img/sedona-bridge.jpg">
         </picture>
@@ -175,7 +127,7 @@
           <fieldset class="half-width fieldsetLeft">
             <label class="form__label" for="adults">Взрослые:</label>   
               <button type="button" class="form__counterBtn form__counterBtn--minus"></button>
-              <input class="form__inputField form__inputField--left" type="number" value="2" name="adults" min="1">
+              <input class="form__inputField form__inputField--left" type="number" value="1" name="adults" min="1">
               <button type="button" class="form__counterBtn form__counterBtn--plus"></button>
           </fieldset>
               
@@ -211,7 +163,6 @@
     </footer>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="js/picturefill.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

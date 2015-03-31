@@ -67,7 +67,7 @@
       height: 30px;
       border: none;
       cursor: pointer;
-      background-color: #f2f2f2;
+      background-color: transparent;
     }
 
     &__dateBtn {
@@ -114,6 +114,7 @@
     .form__inputField {
       width: 115px;
       text-align: center;
+      padding: 0;
     }
 
     .form__counterBtn {
@@ -250,13 +251,13 @@
 
         &--minus {
           
-          left: 115px;
+          left: 117px;
           top: 3px;
         }
 
         &--plus {
           
-          left: 190px;
+          left: 187px;
           top: 3px;
         }
     }

@@ -52,11 +52,17 @@
         }
 
     .gluhanko {
-      background-position: -57px -10px;
+      background-position: -154px -20px;
+       &:hover {
+        background-position: -221px -20px;
+       }
     }
 
     .htmlacademy {
-      background-position: -10px -10px;
+      background-position: -20px -20px;
+        &:hover {
+          background-position: -87px -20px;
+        }
     }
 }
 

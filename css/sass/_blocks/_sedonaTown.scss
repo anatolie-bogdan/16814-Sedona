@@ -4,7 +4,7 @@
 
     & img {
       width: 100%;
-      height: auto;
+      height: 100%;
     }
 
     .contentTitle-h2:after {
@@ -54,6 +54,7 @@
   padding: 20px 20px 15px;
   min-height: 420px;
   background: map-get($bgColors, white);
+  list-style-type: none;
 
     &__item-apartment {
       padding: 15px 0 15px 50px;
@@ -85,14 +86,12 @@
 }
 
 
-
-
 @media screen
   and (min-width: $widthPad) {
 
 .sedonaTown {
   width: 100%;
-  min-height: 585px;
+  min-height: 530px;
   background-color: map-get($bgColors, blue);
 
     & header {
@@ -108,8 +107,8 @@
     }
 
     & img {
-      width: 67%;
-      height: auto;
+      max-width: 67%;
+      max-height: 100%;
       float: right;
       
     }
@@ -148,12 +147,19 @@
 .sedonaReasons {
   margin-top: 0;
   padding: 0;
-  min-height: 275px;
+  min-height: 225px;
   padding-top: 55px;
+  margin-bottom: 55px;
+    &:after {
+      content:"";
+      display:table;
+      clear:both;
+    }
 
     &__item-apartment {
       position: relative;
-      display: inline-block;
+      display: block;
+      float: left;
       width: 33%;
       padding: 0;
       text-align: center;
