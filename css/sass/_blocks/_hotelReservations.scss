@@ -38,13 +38,13 @@
       border: none;
     }
 
-    label {
+    &__label {
       @extend %commonTextRules;
       display: block;
       padding-left: 15px;
     }
 
-    input {
+    &__inpuField {
       @extend %commonTextRules;
       width: 100%;
       height: 35px;
@@ -172,9 +172,9 @@
       padding: 25px 0;
       font-size: $fontSize * 2.1;
     }
-}
+  }
 
-.form {
+  .form {
   position: absolute;
   top: 290px;
   width: 465px;
