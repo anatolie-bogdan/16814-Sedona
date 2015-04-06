@@ -5,43 +5,53 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    // CSS Min
-      cssmin: {
-        options: {
-          shorthandCompacting: false,
-          roundingPrecision: -1,
-          report: 'gzip'
+    sass: {                              
+      dist: {                        
+        options: {                 
+          style: 'expanded'
         },
-        target: {
-          files: {
-            '/css/stylesheets/screen.min.css': ['/css/stylesheets/screen.css']
-          }
+        files: {
+          'build/css/stylesheets/screen.css': ['source/css/sass/screen.scss']
         }
       }
+    },
+  
 
-    // Media
-      cmq: {
-        options: {
-          log: false
-        },
-        style: {
-          files: {
-            '/css/stylesheets/screen.css': ['/css/stylesheets/screen.css']
-          }
+    cssmin: {
+      options: {
+        shorthandCompacting: false,
+        roundingPrecision: -1,
+        report: 'gzip'
+      },
+      target: {
+        files: {
+          'build/css/stylesheets/screen.min.css': ['build/css/stylesheets/screen.css']
         }
       }
+    },
 
 
-    // Autoprefixer
-      autoprefixer: {
-        multiple_files: {
-          expand: true,
-          flatten: true,
-          src: '/css/stylesheets/*.css', // -> src/css/file1.css, src/css/file2.css 
+    cmq: {
+      options: {
+        log: false
+      },
+      style: {
+        files: {
+          'build/css/stylesheets/screen.css': ['build/css/stylesheets/screen.css']
         }
       }
+    },
 
-    // Lint Spaces in code
+
+    autoprefixer: {
+      multiple_files: {
+        expand: true,
+        flatten: true,
+        src: 'build/css/stylesheets/*.css', // -> src/css/file1.css, src/css/file2.css 
+      }
+    },
+
+
     lintspaces: {
       all: {
         src: [
@@ -61,39 +71,73 @@ module.exports = function(grunt) {
           showCodes: true
         }
       }
-    }
+    },
 
-    sass: {                              // Task 
-      dist: {                            // Target 
-        options: {                       // Target options 
-          style: 'expanded'
-        },
-        files: {                         // Dictionary of files 
-          'css/sass/screen.css': ['css/stylesheets/screen.scss']       // 'destination': 'source'
-        }
-      }
-    }
 
-    //CSS Comb
     csscomb: {
       style: {
         expand: true,
-        src: ["css/sass/**/*.scss"]
+        src: ["source/css/sass/**/*.scss"]
       }
-    }
+    },
 
-    //Image min
+
     imagemin: {
       images: {
         options: {
           optimizationLevel: 3
         },
-        files: {[
+        files: [{
           expand: true,
-          src: ["img/**/*.{png,jpg,svg,gif}"]
-          ]}
+          src: ["build/img/**/*.{png,jpg,svg,gif}"]
+          }]
+      }
+    },
+
+    copy: { 
+      build: { 
+        files: [{ 
+          expand: true, 
+          cwd: "source", 
+          src: ["img/**",
+                "js/**",
+                "feedback/**",
+                 "index.html" ], 
+          dest: "build" 
+        }] 
+      }
+    },
+
+    clean: { 
+      build: ["build"]
+    },
+
+    htmlmin: { 
+      options: { 
+        removeComments: true, 
+        collapseWhitespace: true, 
+        collapseBooleanAttributes: true, 
+        caseSensitive: true, 
+        keepClosingSlash: false 
+      }, 
+      html: { 
+        files: { 
+          "build/index.min.html": "build/index.html" 
+        } 
       }
     }
 
   });
+
+  grunt.registerTask("build", [ 
+    "clean", 
+    "copy", 
+    "sass", 
+    "autoprefixer", 
+    "cmq", 
+    "cssmin", 
+    "imagemin", 
+    "htmlmin" 
+
+ ]);
 };
