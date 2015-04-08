@@ -6,6 +6,12 @@ $( ".header__menuOpenBtn").on('tap', function() {
   $( '.header__menu--open' ).toggleClass('js-topMenu');
 });
 
+$(window).resize(function() {
+  if (($(window).width()) >= 667) {
+    $( '.header__menu--open' ).removeClass('js-topMenu');
+    $( '.header__menuOpenBtn span' ).removeClass('active');
+  }
+})
 
 // scroll to sections         
 $('.js-slideToSection').on('click', function(e){

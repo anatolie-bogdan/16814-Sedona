@@ -5,13 +5,20 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    csscomb: {
+      style: {
+        expand: true,
+        src: ["source/css/sass/**/*.scss"]
+      }
+    },
+
     sass: {                              
       dist: {                        
         options: {                 
           style: 'expanded'
         },
         files: {
-          'build/css/stylesheets/screen.css': ['source/css/sass/screen.scss']
+          'build/css/style.css': ['source/css/sass/screen.scss']
         }
       }
     },
@@ -25,7 +32,7 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'build/css/stylesheets/screen.min.css': ['build/css/stylesheets/screen.css']
+          'build/css/style.min.css': ['build/css/style.css']
         }
       }
     },
@@ -37,7 +44,7 @@ module.exports = function(grunt) {
       },
       style: {
         files: {
-          'build/css/stylesheets/screen.css': ['build/css/stylesheets/screen.css']
+          'build/css/style.css': ['build/css/style.css']
         }
       }
     },
@@ -47,7 +54,7 @@ module.exports = function(grunt) {
       multiple_files: {
         expand: true,
         flatten: true,
-        src: 'build/css/stylesheets/*.css', // -> src/css/file1.css, src/css/file2.css 
+        src: 'build/css/*.css', // -> src/css/file1.css, src/css/file2.css 
       }
     },
 
@@ -70,14 +77,6 @@ module.exports = function(grunt) {
           showTypes: true,
           showCodes: true
         }
-      }
-    },
-
-
-    csscomb: {
-      style: {
-        expand: true,
-        src: ["source/css/sass/**/*.scss"]
       }
     },
 
@@ -130,12 +129,13 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask("build", [ 
-    "clean", 
-    "copy", 
-    "sass", 
-    "autoprefixer", 
+    "clean",
+    "csscomb",
+    "sass",  
+    "copy",
     "cmq", 
     "cssmin", 
+    "autoprefixer", 
     "imagemin", 
     "htmlmin" 
 

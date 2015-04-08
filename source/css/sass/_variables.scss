@@ -3,7 +3,7 @@
 $baseFontSize: 62.5%;
 $fontSize: 1em;
 $size: $fontSize / 10 + em;
-$fontFamily: 'PT Sans', sans-serif;
+$fontFamily: "PT Sans", sans-serif;
 $lineHeight: 10px;
 $colors: (
   white: #fff,
@@ -11,12 +11,12 @@ $colors: (
   gray: #333,
   blue: #81b3d2
 );
-$bgColors: ( 
+$bgColors: (
   white: #fff,
   blue: #81b3d2,
   gray: f2f2f2
 );
-$path: '../..';
+$path: "..";
 $width: 100%;
 $widthPad: 667px;
 $widthDesktop: 1200px;

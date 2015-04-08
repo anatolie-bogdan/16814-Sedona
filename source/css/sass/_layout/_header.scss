@@ -5,154 +5,151 @@
   width: $width;
   min-height: 55px;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
   background-color: rgba(map-get($bgColors, white), 0.7);
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.2);
 
-    &__position {
-      position: relative;
-    }
+  &__position {
+    position: relative;
+  }
 
-    &__logo {
+  &__logo {
+    position: absolute;
+    width: 137px;
+    height: 71px;
+    @extend %positionAbsoluteCenter;
+    transition: transform 0.2s linear;
+    background: url($path+"/img/form-logo-triangle.svg") no-repeat;
+
+    &:hover {
+      transform: scale(1.1) translateY(3px);
+    }
+  }
+
+  &__menu {
+    display: block;
+
+    &--open {
       position: absolute;
-      width: 137px;
-      height: 71px;
-      @extend %positionAbsoluteCenter;
-      transition: transform 0.3s linear;
-      background: url($path + '/img/form-logo-triangle.svg') no-repeat;
-    
-      &:hover {
-        transform: scale(1.1) translateY(3px);
-      }
-    }
-
-    &__menu {
       display: block;
+      width: 100%;
+      z-index: 20;
+      top: -225px;
+      transition: transform 0.3s ease-in-out;
+      ul {
+        position: relative;
+      }
+      li {
+        border-bottom: 1px solid #678fa8;
+      }
+      li:not(:first-of-type) {
+        border-top: 1px solid #9ac2db;
+      }
+      a {
+        display: block;
+        width: 100%;
+        padding: 16px 0;
+        font-size: $fontSize * 1.8;
+        line-height: $lineHeight * 2.2;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        color: map-get($bgColors, white);
+        background: map-get($bgColors, blue);
 
-        &--open {
-          position: absolute;
-          display: block;
-          width: 100%;
-          z-index: 1000;
-          top: -225px;
-          transition: all 0.35s ease-in-out;
-            ul {
-              position: relative;
-            }
-            li {
-              border-bottom: 1px solid #678fa8;
-            }
-            li:not(:first-of-type) {
-              border-top: 1px solid #9ac2db;
-            }
-            a {
-              display: block;
-              width: 100%;
-              padding: 16px 0;
-              font-size: $fontSize * 1.8;
-              line-height: $lineHeight * 2.2;
-              font-weight: bold;
-              text-align: center;
-              text-decoration: none;
-              cursor: pointer;
-              color: map-get($bgColors, white);
-              background: map-get($bgColors, blue);
-
-                &:hover {
-                  background: #669ec0;
-                }
-                &:active {
-                  background: #5496bd;
-                }
-            }
+        &:hover {
+          background: #669ec0;
+        }
+        &:active {
+          background: #5496bd;
+        }
+      }
     }
   }
 
   .js-topMenu {
     transform: translateY(225px);
   }
-    
-    button {
-      position: absolute;
-      display: block;
-      width: 22px;
-      height: 22px;
-      cursor: pointer;
-      border: none;
-      background-color: transparent;
-      z-index: 1000;
+
+  button {
+    @extend %btnClear;
+    position: absolute;
+    display: block;
+    width: 22px;
+    height: 22px;
+    background-color: transparent;
+    z-index: 1000;
+  }
+
+  &__menuOpenBtn {
+    right: 5%;
+    top: 15px;
+
+    &:focus,
+    &:active {
+      outline: none;
     }
 
-    &__menuOpenBtn {
-      right: 5%;
-      top: 15px;
+    span {
+      position: relative;
 
-        &:focus,
-        &:active {
-          outline: none;
-        }
-        
-        span {
-          position: relative;
-            
-            &,
-            &:after,
-            &:before {
-              display: block;
-              width: 22px;
-              height: 4px;
-              background-color: map-get($colors, blue);
-              transition: all 500ms ease-in-out;
-            }
+      &,
+      &:after,
+      &:before {
+        display: block;
+        width: 22px;
+        height: 4px;
+        background-color: map-get($colors, blue);
+        transition: all 500ms ease-in-out;
+      }
 
-            &:after,
-            &:before {
-              position: absolute;
-              content: '';
-            }
+      &:after,
+      &:before {
+        position: absolute;
+        content: "";
+      }
 
-            &:before {
-              top: -8px;
-            }
-            
-            &:after {
-              top: 8px;
-            }
-        }
+      &:before {
+        top: -8px;
+      }
 
-            .active {
-              background: transparent;
-            }
-
-            .active:before,
-            .active:after {
-              top: 0;
-              background-color: map-get($colors, white);
-            }
-
-            .active:before {
-              transform: rotate(45deg) scale(1.25);
-            }
-
-            .active:after {
-              transform: rotate(-45deg) scale(1.25);
-            }
+      &:after {
+        top: 8px;
+      }
     }
 
-    &__menuCloseBtn {
-      top: 17px;
-      right: 4.7%;
-      border: none;
-      background: url($path + '/img/icon-cross.svg') no-repeat;
+    .active {
+      background: transparent;
     }
+
+    .active:before,
+    .active:after {
+      top: 0;
+      background-color: map-get($colors, white);
+    }
+
+    .active:before {
+      transform: rotate(45deg) scale(1.25);
+    }
+
+    .active:after {
+      transform: rotate(-45deg) scale(1.25);
+    }
+  }
+
+  &__menuCloseBtn {
+    top: 17px;
+    right: 4.7%;
+    border: none;
+    background: url($path+"/img/icon-cross.svg") no-repeat;
+  }
 }
 
 
 @media screen
   and (min-width: $widthPad) {
-
   .header {
-
     &__position {
       position: relative;
     }
@@ -161,57 +158,59 @@
       display: block;
       width: 100%;
 
-        &--open {
+      &--open {
+        position: static;
+        display: block;
+        z-index: 20;
+
+        ul {
           position: static;
+          margin: 0 auto;
+          padding: 15px 0;
+          text-align: center;
+        }
+        li {
+          display: inline-block;
+          border-bottom: none;
+          width: 20%;
+
+          &:not(:first-of-type) {
+            border-top: none;
+          }
+          &:nth-child(1) {
+            margin-right: 0;
+          }
+          &:nth-child(2) {
+            margin-right: 50px;
+          }
+          &:nth-child(3) {
+            margin-left: 50px;
+          }
+          &:nth-child(4) {
+            margin-right: 0;
+          }
+        }
+        a {
           display: block;
-          z-index: 1000;
-            ul {
-              position: static;
-              margin: 0 auto;
-              padding: 15px 0;
-              text-align: center;
-            }
-            li {
-              display: inline-block;
-              border-bottom: none;
-              width: 20%;
-            }
-            li:not(:first-of-type) {
-              border-top: none;
-            }
-            li:nth-child(1) {
-              margin-right: 0;
-            }
-            li:nth-child(2) {
-              margin-right: 50px;
-            }
-            li:nth-child(3) {
-              margin-left: 50px;
-            }
-            li:nth-child(4) {
-              margin-right: 0;
-            }
-            a {
-              display: static;
-              padding: 0;
-              font-size: $fontSize * 1.4;
-              line-height: $lineHeight * 2.6;
-              font-weight: bold;
-              color: map-get($colors, black);
-              background: none;
+          padding: 0;
+          font-size: $fontSize * 1.4;
+          line-height: $lineHeight * 2.6;
+          font-weight: bold;
+          color: map-get($colors, black);
+          background: none;
 
-                &:hover {
-                  background: none;
-                  color: map-get($colors, blue);
-                }
-
-                &:active {
-                  background: none;
-                  color: map-get($colors, gray);
-                }
-            }
+          &:hover {
+            background: none;
+            color: map-get($colors, blue);
+          }
+          &:active {
+            background: none;
+            color: map-get($colors, gray);
+          }
+        }
+      }
     }
-  }    
+
     button {
       display: none;
     }
@@ -220,42 +219,42 @@
 
 @media screen
   and (min-width: 768px) {
+  .header {
+    &__menu {
+      &--open {
+        li {
+          width: 20%;
 
-.header {
-  &__menu {
-    &--open {
-          li {
-            width: 20%;
-          }
-          li:nth-child(2) {
+          &:nth-child(2) {
             margin-right: 70px;
           }
-          li:nth-child(3) {
+          &:nth-child(3) {
             margin-left: 70px;
           }
         }
       }
+    }
   }
 }
 
 @media screen
   and (min-width: $widthDesktop) {
+  .header {
+    width: $widthDesktop;
 
-.header {
-  width: $widthDesktop;
+    &__menu {
+      &--open {
+        li {
+          width: 20%;
 
-  &__menu {
-    &--open {
-          li {
-            width: 20%;
-          }
-          li:nth-child(2) {
+          &:nth-child(2) {
             margin-right: 110px;
           }
-          li:nth-child(3) {
+          &:nth-child(3) {
             margin-left: 110px;
           }
         }
       }
+    }
   }
 }

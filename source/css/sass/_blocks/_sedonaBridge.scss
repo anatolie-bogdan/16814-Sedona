@@ -2,23 +2,22 @@
   min-height: 440px;
   background: map-get($bgColors, blue);
 
-    & img {
-      width: 100%;
-      height: auto;
-    }
+  & img {
+    width: 100%;
+    height: auto;
+  }
 
-    .contentTitle-h2:after {
-      content: "— №2 —";
-    }
+  .contentTitle-h2:after {
+    content: "— №2 —";
+  }
 }
 
 @media screen
   and (min-width: $widthPad) {
-
   .sedonaBridge {
+    overflow: hidden;
     min-height: 255px;
     max-height: 255px;
-    overflow: hidden;
 
     &__blockTitle {
       display: inline-block;
@@ -27,9 +26,9 @@
     }
 
     & img {
+      float: left;
       width: 67%;
       height: auto;
-      float: left;
     }
   }
 }

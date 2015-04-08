@@ -3,76 +3,74 @@
   margin-top: -4px;
   background-color: #eee;
 
-    &__list {
-      margin: 0 20px;
-      list-style-type: none;
+  &__list {
+    margin: 0 20px;
+    list-style-type: none;
 
-        li:not(:last-child) {
-          border-bottom: 1px solid #d6d6d6;
-        }
+    li:not(:last-child) {
+      border-bottom: 1px solid #d6d6d6;
     }
+  }
 
-    .contentText {
-      padding: 20px 15px 30px;
-    }
+  .contentText {
+    padding: 20px 15px 30px;
+  }
 
-    .contentTitle-h2 {
-      padding-top: 30px;
-    }
+  .contentTitle-h2 {
+    padding-top: 30px;
+  }
 
-    li:first-child .contentTitle-h2:after {
-      content: "— №3 —";
-    }
+  li:first-child .contentTitle-h2:after {
+    content: "— №3 —";
+  }
 
-    li:nth-child(2) .contentTitle-h2:after {
-      content: "— №4 —";
-    }
-    
-    li:last-child .contentTitle-h2:after {
-      content: "— №5 —";
-    }
+  li:nth-child(2) .contentTitle-h2:after {
+    content: "— №4 —";
+  }
+
+  li:last-child .contentTitle-h2:after {
+    content: "— №5 —";
+  }
 }
 
 
 @media screen
   and (min-width: $widthPad) {
-
   .sedona-moreAdvantages {
     min-height: 255px;
     margin-top: 0;
 
-      &__list {
-        margin: 0;
-        padding-top: 45px;
+    &__list {
+      margin: 0;
+      padding-top: 45px;
 
-          li {
-            display: block;
-            float: left;
-            width: 33%;
-          }
-
-          li:not(:last-child) {
-            border-bottom: none;
-          }
+      li {
+        display: block;
+        float: left;
+        width: 33%;
       }
 
-      .contentText {
-        padding: 20px 15% 0;
-        font-size: $fontSize * 1.4;
-        line-height: $lineHeight * 2.1;
+      li:not(:last-child) {
+        border-bottom: none;
       }
+    }
 
-      .contentTitle-h2 {
-        width: 59%;
-        margin: 0 auto;
-        padding: 0 45px 30px;
-      }
+    .contentText {
+      font-size: $fontSize * 1.4;
+      line-height: $lineHeight * 2.1;
+      padding: 20px 15% 0;
+    }
+
+    .contentTitle-h2 {
+      width: 59%;
+      margin: 0 auto;
+      padding: 0 45px 30px;
+    }
   }
 }
 
 @media screen
   and (min-width: $widthDesktop) {
-
   .sedona-moreAdvantages .contentTitle-h2 {
     width: 33%;
   }

@@ -413,7 +413,7 @@ html, body, ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
   right: 0;
 }
 
-.form label, .form input, .form .sedona-hotels__button {
+.form__label, .form__inputfield, .form .sedona-hotels__button {
   font-family: "PT Sans", sans-serif;
   font-size: 1.4em;
   line-height: 26px;
@@ -421,6 +421,19 @@ html, body, ul, ol, li, p, h1, h2, h3, h4, img, fieldset, blockquote {
   font-weight: bold;
   text-transform: uppercase;
   text-align: left;
+}
+
+.form__datebtn, .form .sedona-hotels__button, .half-width .form__counterBtn {
+  border: none;
+  cursor: pointer;
+}
+
+.form__datebtn, .half-width .form__counterBtn {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
 }
 
 html, body {
@@ -476,7 +489,7 @@ input[type=number] {
   width: 100%;
   min-height: 55px;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
   background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.2);
 }
@@ -487,7 +500,7 @@ input[type=number] {
   position: absolute;
   width: 137px;
   height: 71px;
-  transition: transform 0.3s linear;
+  transition: transform 0.2s linear;
   background: url("../../img/form-logo-triangle.svg") no-repeat;
 }
 .header__logo:hover {
@@ -500,9 +513,9 @@ input[type=number] {
   position: absolute;
   display: block;
   width: 100%;
-  z-index: 1000;
+  z-index: 20;
   top: -225px;
-  transition: all 0.35s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 .header__menu--open ul {
   position: relative;
@@ -543,7 +556,7 @@ input[type=number] {
   cursor: pointer;
   border: none;
   background-color: transparent;
-  z-index: 1000;
+  z-index: 20;
 }
 .header__menuOpenBtn {
   right: 5%;
@@ -604,7 +617,7 @@ input[type=number] {
   .header__menu--open {
     position: static;
     display: block;
-    z-index: 1000;
+    z-index: 20;
   }
   .header__menu--open ul {
     position: static;
@@ -633,7 +646,7 @@ input[type=number] {
     margin-right: 0;
   }
   .header__menu--open a {
-    display: static;
+    display: block;
     padding: 0;
     font-size: 1.4em;
     line-height: 26px;
@@ -929,23 +942,23 @@ input[type=number] {
   height: 100%;
 }
 .sedonaTown .contentTitle-h2:after {
-  content: "— №1 —";
+  content: '— №1 —';
 }
 
 .contentTitle-h2 {
-  position: relative;
   font-size: 1.8em;
-  line-height: 26px;
-  padding: 40px 0 30px;
   font-weight: bold;
+  line-height: 26px;
+  position: relative;
+  padding: 40px 0 30px;
 }
 .contentTitle-h2:after {
-  content: "";
+  font-size: 14px;
+  font-weight: normal;
   position: absolute;
   display: block;
   margin-top: 5px;
-  font-size: 14px;
-  font-weight: normal;
+  content: '';
 }
 .contentTitle-h2--white {
   padding-top: 40px;
@@ -956,33 +969,33 @@ input[type=number] {
 }
 
 .contentText {
-  padding: 20px 20px 40px;
   font-size: 1.4em;
   line-height: 21px;
+  padding: 20px 20px 40px;
 }
 .contentText--white {
   color: #fff;
 }
 
 .sedonaReasons {
+  min-height: 420px;
   margin-top: -4px;
   padding: 20px 20px 15px;
-  min-height: 420px;
-  background: #fff;
   list-style-type: none;
+  background: #fff;
 }
 .sedonaReasons__item-apartment {
   padding: 15px 0 15px 50px;
   text-align: left;
-  background-image: url("../../img/sprites/reasons/sprite.png");
+  background-image: url("../..") "/img/sprites/reasons/sprite.png";
   background-repeat: no-repeat;
 }
 .sedonaReasons__title {
-  padding: 5px 0 15px 0;
   font-size: 1.8em;
-  line-height: 26px;
-  color: #000;
   font-weight: bold;
+  line-height: 26px;
+  padding: 5px 0 15px 0;
+  color: #000;
 }
 .sedonaReasons .contentText {
   padding: 0;
@@ -1004,29 +1017,29 @@ input[type=number] {
     background-color: #81b3d2;
   }
   .sedonaTown header {
+    overflow: hidden;
     width: 100%;
     max-height: 255px;
-    overflow: hidden;
   }
-  .sedonaTown__blockTitle {
+  .sedonaTown__blocktitle {
     display: inline-block;
     width: 33%;
     height: 255px;
   }
   .sedonaTown img {
+    float: right;
     max-width: 67%;
     max-height: 100%;
-    float: right;
   }
   .sedonaTown .contentTitle-h2:after {
-    content: "— №1 —";
+    content: '— №1 —';
   }
 
   .contentTitle-h2 {
+    font-size: 2.1em;
     width: 59%;
     margin: 0 auto;
     padding: 40px 45px 30px;
-    font-size: 2.1em;
   }
   .contentTitle-h2--white {
     padding-top: 40px;
@@ -1037,25 +1050,25 @@ input[type=number] {
   }
 
   .contentText {
-    padding: 20px 17% 0;
     font-size: 1.4em;
     line-height: 21px;
+    padding: 20px 17% 0;
   }
   .contentText--white {
     color: #fff;
   }
 
   .sedonaReasons {
-    margin-top: 0;
-    padding: 0;
     min-height: 225px;
-    padding-top: 55px;
+    margin-top: 0;
     margin-bottom: 55px;
+    padding: 0;
+    padding-top: 55px;
   }
   .sedonaReasons:after {
-    content: "";
     display: table;
     clear: both;
+    content: '';
   }
   .sedonaReasons__item-apartment {
     position: relative;
@@ -1067,22 +1080,22 @@ input[type=number] {
   }
   .sedonaReasons__item-apartment:before {
     position: absolute;
-    left: 0;
-    right: 0;
     top: 10px;
-    margin: 0 auto;
+    right: 0;
+    left: 0;
     display: block;
-    content: '';
     width: 80px;
     height: 80px;
-    background: url("../../img/sprites/reasons/sprite-768(1x).png");
+    margin: 0 auto;
+    content: '';
+    background: url("../..") "/img/sprites/reasons/sprite-768(1x).png";
     background-repeat: no-repeat;
   }
   .sedonaReasons__title {
+    font-size: 2.1em;
     width: 65%;
     margin: 0 auto;
     padding: 110px 0 15px 0;
-    font-size: 2.1em;
   }
   .sedonaReasons .contentText {
     width: 67%;
@@ -1118,24 +1131,24 @@ input[type=number] {
   height: auto;
 }
 .sedonaBridge .contentTitle-h2:after {
-  content: "— №2 —";
+  content: '— №2 —';
 }
 
 @media screen and (min-width: 667px) {
   .sedonaBridge {
+    overflow: hidden;
     min-height: 255px;
     max-height: 255px;
-    overflow: hidden;
   }
-  .sedonaBridge__blockTitle {
+  .sedonaBridge__blocktitle {
     display: inline-block;
     width: 33%;
     height: 255px;
   }
   .sedonaBridge img {
+    float: left;
     width: 67%;
     height: auto;
-    float: left;
   }
 }
 .sedona-moreAdvantages {
@@ -1157,13 +1170,13 @@ input[type=number] {
   padding-top: 30px;
 }
 .sedona-moreAdvantages li:first-child .contentTitle-h2:after {
-  content: "— №3 —";
+  content: '— №3 —';
 }
 .sedona-moreAdvantages li:nth-child(2) .contentTitle-h2:after {
-  content: "— №4 —";
+  content: '— №4 —';
 }
 .sedona-moreAdvantages li:last-child .contentTitle-h2:after {
-  content: "— №5 —";
+  content: '— №5 —';
 }
 
 @media screen and (min-width: 667px) {
@@ -1184,9 +1197,9 @@ input[type=number] {
     border-bottom: none;
   }
   .sedona-moreAdvantages .contentText {
-    padding: 20px 15% 0;
     font-size: 1.4em;
     line-height: 21px;
+    padding: 20px 15% 0;
   }
   .sedona-moreAdvantages .contentTitle-h2 {
     width: 59%;
@@ -1201,15 +1214,15 @@ input[type=number] {
 }
 .sedonaHotels {
   min-height: 690px;
-  background: #fff;
   margin-bottom: 20px;
+  background: #fff;
 }
 .sedonaHotels__invite {
-  padding: 30px 0 25px;
   font-size: 2.1em;
-  line-height: 26px;
-  color: #000;
   font-weight: bold;
+  line-height: 26px;
+  padding: 30px 0 25px;
+  color: #000;
 }
 .sedonaHotels .contentText--hotels {
   line-height: 24px;
@@ -1217,11 +1230,11 @@ input[type=number] {
   padding-bottom: 30px;
 }
 .sedonaHotels__title {
-  padding: 35px 0;
   font-size: 1.8em;
-  line-height: 26px;
-  color: #fff;
   font-weight: bold;
+  line-height: 26px;
+  padding: 35px 0;
+  color: #fff;
   background: #766357;
 }
 
@@ -1234,37 +1247,28 @@ input[type=number] {
   position: relative;
   border: none;
 }
-.form label {
+.form__label {
   display: block;
   padding-left: 15px;
 }
-.form input {
+.form__inputfield {
+  box-sizing: border-box;
   width: 100%;
   height: 35px;
+  margin: 10px 0 25px;
+  padding-right: 35px;
+  padding-left: 15px;
   border: 2px solid #f2f2f2;
   background: #f2f2f2;
-  margin: 10px 0 25px;
-  padding-left: 15px;
-  padding-right: 35px;
-  box-sizing: border-box;
 }
-.form input:focus {
+.form__inputfield:focus {
   background: white;
 }
-.form button {
-  position: absolute;
-  display: block;
-  width: 30px;
-  height: 30px;
-  border: none;
-  cursor: pointer;
-  background-color: transparent;
-}
-.form__dateBtn {
-  background-image: url("../../img/icon-calendar.svg");
+.form__datebtn {
+  right: 3%;
+  background-image: url("../..") "/img/icon-calendar.svg";
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  right: 3%;
 }
 .form .btnPosition1 {
   top: 38px;
@@ -1273,15 +1277,13 @@ input[type=number] {
   top: 135px;
 }
 .form .sedona-hotels__button {
-  padding: 0;
   font-size: 2.1em;
   width: 100%;
   height: 55px;
+  padding: 0;
+  text-align: center;
   color: #fff;
   background: #81b3d2;
-  text-align: center;
-  border: none;
-  cursor: pointer;
 }
 .form .sedona-hotels__button:hover {
   background: #669ec0;
@@ -1294,28 +1296,28 @@ input[type=number] {
 }
 
 .half-width {
+  max-width: 130px;
   display: inline-block;
   vertical-align: middle;
-  max-width: 130px;
 }
 .half-width .form__inputField {
   width: 115px;
-  text-align: center;
   padding: 0;
+  text-align: center;
 }
 .half-width .form__counterBtn {
   background-repeat: no-repeat;
   background-position: 62% 57%;
 }
 .half-width .form__counterBtn--minus {
-  background-image: url("../../img/icon-minus.svg");
-  left: 0;
   top: 36px;
+  left: 0;
+  background-image: url("../..") "/img/icon-minus.svg";
 }
 .half-width .form__counterBtn--plus {
-  background-image: url("../../img/icon-plus.svg");
-  left: 78px;
   top: 36px;
+  left: 78px;
+  background-image: url("../..") "/img/icon-plus.svg";
 }
 
 .fieldsetLeft {
@@ -1333,8 +1335,8 @@ input[type=number] {
     margin-bottom: 0;
   }
   .sedonaHotels__invite {
-    padding: 50px 0 35px;
     font-size: 3em;
+    padding: 50px 0 35px;
   }
   .sedonaHotels .contentText--hotels {
     padding-top: 0;
@@ -1344,51 +1346,51 @@ input[type=number] {
     display: block;
   }
   .sedonaHotels__title {
-    position: absolute;
-    width: 565px;
-    top: 215px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    z-index: 100;
-    padding: 25px 0;
     font-size: 2.1em;
+    position: absolute;
+    z-index: 100;
+    top: 215px;
+    right: 0;
+    left: 0;
+    width: 565px;
+    margin: 0 auto;
+    padding: 25px 0;
   }
 
   .form {
     position: absolute;
+    z-index: 100;
     top: 290px;
+    right: 0;
+    left: 0;
     width: 465px;
     min-height: 295px;
-    left: 0;
-    right: 0;
     margin: 0 auto;
     padding: 50px;
-    z-index: 100;
     background-color: #fff;
-    box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.15);
   }
   .form fieldset {
     position: relative;
-    border: none;
     text-align: right;
+    border: none;
   }
-  .form label {
+  .form__label {
+    padding-right: 13px;
+    padding-left: 0;
     display: inline-block;
     vertical-align: middle;
-    padding-left: 0;
-    padding-right: 13px;
   }
-  .form input {
+  .form__inputfield {
     display: inline-block;
+    box-sizing: border-box;
     width: 355px;
     margin: 0;
-    padding-left: 15px;
-    padding-right: 45px;
-    box-sizing: border-box;
     margin-bottom: 30px;
+    padding-right: 45px;
+    padding-left: 15px;
   }
-  .form__dateBtn {
+  .form__datebtn {
     right: 3%;
   }
   .form .btnPosition1 {
@@ -1398,17 +1400,17 @@ input[type=number] {
     top: 68px;
   }
   .form .sedona-hotels__button {
-    padding: 0;
     margin: 0;
+    padding: 0;
   }
 
   .half-width {
-    display: inline-block;
-    vertical-align: middle;
     min-width: 49%;
     margin-bottom: 30px;
+    display: inline-block;
+    vertical-align: middle;
   }
-  .half-width label[for="adults"] {
+  .half-width label[for='adults'] {
     padding-right: 33px;
   }
   .half-width .form__inputField {
@@ -1420,12 +1422,12 @@ input[type=number] {
     background-position: 62% 57%;
   }
   .half-width .form__counterBtn--minus {
-    left: 117px;
     top: 3px;
+    left: 117px;
   }
   .half-width .form__counterBtn--plus {
-    left: 187px;
     top: 3px;
+    left: 187px;
   }
 
   .fieldsetLeft {

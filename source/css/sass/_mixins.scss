@@ -1,8 +1,8 @@
 // Mixins and Extends
 
 @mixin inline-block($valign: $inline-block-alignment) {
-    display: inline-block;
-    vertical-align: $valign;
+  display: inline-block;
+  vertical-align: $valign;
 }
 
 %marginsClear {
@@ -28,4 +28,17 @@
   font-weight: bold;
   text-transform: uppercase;
   text-align: left;
+}
+
+%btnClear {
+  border: none;
+  cursor: pointer;
+}
+
+%formBtn {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
 }

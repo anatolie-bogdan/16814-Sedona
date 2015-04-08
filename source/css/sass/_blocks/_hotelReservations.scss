@@ -1,31 +1,31 @@
 // hotels reservations
 .sedonaHotels {
   min-height: 690px;
-  background: map-get($colors, white);
   margin-bottom: 20px;
+  background: map-get($colors, white);
 
-    &__invite {
-      padding: 30px 0 25px;
-      font-size: $fontSize * 2.1;
-      line-height: $lineHeight * 2.6;
-      color: map-get($colors, black);
-      font-weight: bold;
-    }
+  &__invite {
+    font-size: $fontSize * 2.1;
+    font-weight: bold;
+    line-height: $lineHeight * 2.6;
+    padding: 30px 0 25px;
+    color: map-get($colors, black);
+  }
 
-    .contentText--hotels {
-      line-height: $lineHeight * 2.4;
-      padding-top: 0;
-      padding-bottom: 30px;
-    }
+  .contentText--hotels {
+    line-height: $lineHeight * 2.4;
+    padding-top: 0;
+    padding-bottom: 30px;
+  }
 
-    &__title {
-      padding: 35px 0;
-      font-size: $fontSize * 1.8;
-      line-height: $lineHeight * 2.6;
-      color: map-get($colors, white);
-      font-weight: bold;
-      background: #766357;
-    }
+  &__title {
+    font-size: $fontSize * 1.8;
+    font-weight: bold;
+    line-height: $lineHeight * 2.6;
+    padding: 35px 0;
+    color: map-get($colors, white);
+    background: #766357;
+  }
 }
 
 .form {
@@ -33,110 +33,103 @@
   margin: 25px 20px 40px;
   text-align: left;
 
-    fieldset {
-      position: relative;
-      border: none;
+  fieldset {
+    position: relative;
+    border: none;
+  }
+
+  &__label {
+    display: block;
+    padding-left: 15px;
+    @extend %commonTextRules;
+  }
+
+  &__inputField {
+    box-sizing: border-box;
+    width: 100%;
+    height: 35px;
+    margin: 10px 0 25px;
+    padding-right: 35px;
+    padding-left: 15px;
+    border: 2px solid #f2f2f2;
+    background: #f2f2f2;
+    @extend %commonTextRules;
+
+    &:focus {
+      background: white;
+    }
+  }
+
+  &__dateBtn {
+    right: 3%;
+    background-image: url($path+"/img/icon-calendar.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    @extend %btnClear;
+    @extend %formBtn;;
+  }
+
+  .btnPosition1 {
+    top: 38px;
+  }
+
+  .btnPosition2 {
+    top: 135px;
+  }
+
+  .sedona-hotels__button {
+    font-size: $fontSize * 2.1;
+    width: 100%;
+    height: 55px;
+    padding: 0;
+    text-align: center;
+    color: map-get($bgColors, white);
+    background: map-get($bgColors, blue);
+    @extend %btnClear;
+    @extend %commonTextRules;
+
+    &:hover {
+      background: #669ec0;
     }
 
-    & label {
-      @extend %commonTextRules;
-      display: block;
-      padding-left: 15px;
+    &:active {
+      background: #5496bd;
     }
 
-    & input {
-      @extend %commonTextRules;
-      width: 100%;
-      height: 35px;
-      border: 2px solid #f2f2f2;
-      background: #f2f2f2;
-      margin: 10px 0 25px;
-      padding-left: 15px;
-      padding-right: 35px;
-      box-sizing: border-box;
-
-        &:focus {
-          background: white;
-        }
+    &:focus {
+      background: #669ec0;
     }
-
-    & button {
-      position: absolute;
-      display: block;
-      width: 30px;
-      height: 30px;
-      border: none;
-      cursor: pointer;
-      background-color: transparent;
-    }
-
-    &__dateBtn {
-      background-image: url($path + '/img/icon-calendar.svg');
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      right: 3%;
-    }
-
-    .btnPosition1 {
-      top: 38px;
-    }
-
-    .btnPosition2 {
-      top: 135px;
-    }
-
-    .sedona-hotels__button {
-      padding: 0;
-      @extend %commonTextRules;
-      font-size: $fontSize * 2.1;
-      width: 100%;
-      height: 55px;
-      color: map-get($bgColors, white);
-      background: map-get($bgColors, blue);
-      text-align: center;
-      border: none;
-      cursor: pointer;
-
-        &:hover {
-          background: #669ec0;
-        }
-
-        &:active {
-          background: #5496bd;
-        }
-
-        &:focus {
-          background: #669ec0;
-        }
-    }
+  }
 }
 
 .half-width {
-  @include inline-block();
   max-width: 130px;
+  @include inline-block();
 
-    .form__inputField {
-      width: 115px;
-      text-align: center;
-      padding: 0;
+  .form__inputField {
+    width: 115px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .form__counterBtn {
+    background-repeat: no-repeat;
+    background-position: 62% 57%;
+    @extend %btnClear;
+    @extend %formBtn;
+
+    &--minus {
+      top: 36px;
+      left: 0;
+      background-image: url($path+"/img/icon-minus.svg");
     }
 
-    .form__counterBtn {
-      background-repeat: no-repeat;
-      background-position: 62% 57%;
-
-        &--minus {
-          background-image: url($path + '/img/icon-minus.svg');
-          left: 0;
-          top: 36px;
-        }
-
-        &--plus {
-          background-image: url($path + '/img/icon-plus.svg');
-          left: 78px;
-          top: 36px;
-        }
+    &--plus {
+      top: 36px;
+      left: 78px;
+      background-image: url($path+"/img/icon-plus.svg");
     }
+  }
 }
 
 .fieldsetLeft {
@@ -149,72 +142,71 @@
 
 @media screen
   and (min-width: $widthPad) {
-
   .sedonaHotels {
     position: relative;
     min-height: 290px;
     margin-bottom: 0;
 
     &__invite {
-      padding: 50px 0 35px;
       font-size: $fontSize * 3;
+      padding: 50px 0 35px;
     }
 
     .contentText--hotels {
       padding-top: 0;
       padding-bottom: 0;
 
-        & span {
-          display: block;
-        }
+      & span {
+        display: block;
+      }
     }
 
     &__title {
-      position: absolute;
-      width: 565px;
-      top: 215px;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      z-index: 100;
-      padding: 25px 0;
       font-size: $fontSize * 2.1;
+      position: absolute;
+      z-index: 5;
+      top: 215px;
+      right: 0;
+      left: 0;
+      width: 565px;
+      margin: 0 auto;
+      padding: 25px 0;
     }
   }
 
   .form {
-  position: absolute;
-  top: 290px;
-  width: 465px;
-  min-height: 295px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  padding: 50px;
-  z-index: 100;
-  background-color: map-get($bgColors, white);
-  box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    z-index: 5;
+    top: 290px;
+    right: 0;
+    left: 0;
+    width: 465px;
+    min-height: 295px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: map-get($bgColors, white);
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.15);
 
     fieldset {
       position: relative;
-      border: none;
       text-align: right;
+      border: none;
     }
 
-    label {
-      @include inline-block();
-      padding-left: 0;
+    &__label {
       padding-right: 13px;
+      padding-left: 0;
+      @include inline-block();
     }
 
-    input {
+    &__inputField {
       display: inline-block;
+      box-sizing: border-box;
       width: 355px;
       margin: 0;
-      padding-left: 15px;
-      padding-right: 45px;
-      box-sizing: border-box;
       margin-bottom: 30px;
+      padding-right: 45px;
+      padding-left: 15px;
     }
 
     &__dateBtn {
@@ -230,15 +222,15 @@
     }
 
     .sedona-hotels__button {
-      padding: 0;
       margin: 0;
+      padding: 0;
     }
-}
+  }
 
-.half-width {
-  @include inline-block();
-  min-width: 49%;
-  margin-bottom: 30px;
+  .half-width {
+    min-width: 49%;
+    margin-bottom: 30px;
+    @include inline-block();
 
     label[for="adults"] {
       padding-right: 33px;
@@ -248,28 +240,25 @@
       width: 115px;
       text-align: center;
 
-        &--left {
-          
-        }
+      &--left {
+      }
     }
 
     .form__counterBtn {
       background-repeat: no-repeat;
       background-position: 62% 57%;
 
-        &--minus {
-          
-          left: 117px;
-          top: 3px;
-        }
+      &--minus {
+        top: 3px;
+        left: 117px;
+      }
 
-        &--plus {
-          
-          left: 187px;
-          top: 3px;
-        }
+      &--plus {
+        top: 3px;
+        left: 187px;
+      }
     }
-} 
+  }
 
   .fieldsetLeft {
     float: left;
@@ -277,5 +266,4 @@
   .fieldsetRight {
     float: right;
   }
-
 }
